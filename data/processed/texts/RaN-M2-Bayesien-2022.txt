@@ -1,0 +1,672 @@
+Cours acc´ el´ er´ e
+Statistiques
+Partie 3:
+Introduction ` a la
+statistique
+bay´ esienne
+Christine Keribin
+Introduction
+Estimation
+Loi a priori
+Intervalle de
+confiance
+Test d’hypoth` esesCours acc´ el´ er´ e Statistiques
+Partie 3: Introduction ` a la statistique
+bay´ esienne
+Master 2 Math´ ematiques et Applications
+Christine Keribin
+1Laboratoire de Math´ ematiques d’Orsay
+Universit´ e Paris-Saclay
+2022-2023
+1/28 Cours acc´ el´ er´ e
+Statistiques
+Partie 3:
+Introduction ` a la
+statistique
+bay´ esienne
+Christine Keribin
+Introduction
+Estimation
+Loi a priori
+Intervalle de
+confiance
+Test d’hypoth` esesBibliographie
+C. P. Robert.
+Le choix bay´ esien
+Springer, 2006.
+J-M. Marin et C. P. Robert.
+Bayesian Essentials with R .
+Springer, 2014.
+2/28 Cours acc´ el´ er´ e
+Statistiques
+Partie 3:
+Introduction ` a la
+statistique
+bay´ esienne
+Christine Keribin
+Introduction
+Estimation
+Loi a priori
+Intervalle de
+confiance
+Test d’hypoth` esesStatistique
+▶R´ esoudre un probl` eme inverse : d´ eterminer le param` etre
+θdu m´ ecanisme probabiliste g´ en´ erateur
+▶en proba, on est conditionnel ` a θ: densit´ e
+x7→fθ(x) =f(x|θ)
+▶en stat, on est conditionnel aux observations x:
+vraisemblance
+θ7→L(θ;x) =L(θ|x) =fθ(x)
+3/28 Cours acc´ el´ er´ e
+Statistiques
+Partie 3:
+Introduction ` a la
+statistique
+bay´ esienne
+Christine Keribin
+Introduction
+Estimation
+Loi a priori
+Intervalle de
+confiance
+Test d’hypoth` esesVision fr´ equentiste - vision bay´ esienne
+▶vision fr´ equentiste :
+▶θest estim´ e par bθavec une certaine incertitude car
+l’´ echantillon Xest fini
+▶on ´ evalue en moyenne
+▶vision bay´ esienne :
+▶mod´ eliser l’incertitude sur θpar une loi de probabilit´ e a
+priori π(θ)
+▶l’inf´ erence bay´ esienne consiste ` a d´ eterminer la loi a
+posteriori π(θ|X=x)
+Th´ eor` eme (Bayes)
+SiAetEsont deux ´ ev´ enements tels que I P(E)̸= 0, alors
+I P(A|E) =I P(A∩E)
+I P(E)=I P(E|A)I P(A)
+I P(E)
+4/28 Cours acc´ el´ er´ e
+Statistiques
+Partie 3:
+Introduction ` a la
+statistique
+bay´ esienne
+Christine Keribin
+Introduction
+Estimation
+Loi a priori
+Intervalle de
+confiance
+Test d’hypoth` esesVersion continue du th´ eor` eme de Bayes
+Th´ eor` eme (Bayes (1763))
+Soient XetYdeux variables de loi jointe de densit´ e φ(x,y),
+de densit´ e conditionnelle f(x|y)et de densit´ e marginale
+g(y) =R
+φ(x,y)dx,
+g(y|x) =f(x|y)g(y)R
+f(x|y)g(y)dy
+Application :
+π(θ|x) =f(x|θ)π(θ)R
+f(x|θ)π(θ)dθ=L(θ;x)π(θ)
+m(x)
+o` um(x) est appel´ e vraisemblance int´ egr´ ee : constante de
+normalisation de la loi a posteriori
+5/28 Cours acc´ el´ er´ e
+Statistiques
+Partie 3:
+Introduction ` a la
+statistique
+bay´ esienne
+Christine Keribin
+Introduction
+Estimation
+Loi a priori
+Intervalle de
+confiance
+Test d’hypoth` esesMod` ele statistique bay´ esien
+D´ efinition
+Un mod` ele statistique bay´ esien est constitu´ e d’un mod` ele
+statistique param´ etrique f(x|θ)et d’une distribution a priori
+pour le param` etre π(θ).
+▶Le th´ eor` eme de Bayes actualise l’information sur la loi
+deθen ”extrayant” celle contenue dans l’observation x
+▶novateur : param` etre inconnu →param` etre al´ eatoire
+Exemple Xi∼ N(µ, σ2),µ∼ N(µ0, τ2)
+Int´ erˆ ets
+▶petits ´ echantillons
+▶remplace une maximisation par une int´ egration
+,→rend les estimateurs plus stables
+▶connaissance experte du domaine
+6/28 Cours acc´ el´ er´ e
+Statistiques
+Partie 3:
+Introduction ` a la
+statistique
+bay´ esienne
+Christine Keribin
+Introduction
+Estimation
+Loi a priori
+Intervalle de
+confiance
+Test d’hypoth` esesChoix de la loi a priori π(θ)
+l’utilisation d’une loi sur θpermet de r´ esumer l’information
+disponible sur θet l’incorporation de cette information
+inexacte dans le processus de d´ ecision
+Choix en fonction
+▶de ce qu’on en connait avant l’observation ou pas (prior
+non informatif)
+▶de consid´ erations pratiques (faisabilit´ e de calculs, )
+7/28 Cours acc´ el´ er´ e
+Statistiques
+Partie 3:
+Introduction ` a la
+statistique
+bay´ esienne
+Christine Keribin
+Introduction
+Estimation
+Loi a priori
+Intervalle de
+confiance
+Test d’hypoth` esesD´ ecision fr´ equentiste
+Soitℓ(θ, δ) une fonction de perte, et δ(x) un estimateur de
+θ∈I Rp
+Le risque fr´ equentiste est d´ efini par R(θ, δ) = I E θ[ℓ(θ, δ(X))]
+▶en fq, les estimateurs sont ´ evalu´ es suivant leur
+performance ` a long terme (en moyenne) pour toutes les
+valeurs possibles du param` etre θ
+▶mais ce n’est pas forc´ ement optimal pour les valeurs
+observ´ ees sur l’´ echantillon
+▶difficult´ es ` a avoir des performances uniform´ ement
+meilleures
+▶d´ epend de θinconnu
+,→: id´ ee bay´ esienne : int´ egrer sur l’espace des param` etres
+pour pallier les difficult´ es du risque fr´ equentiste
+8/28 Cours acc´ el´ er´ e
+Statistiques
+Partie 3:
+Introduction ` a la
+statistique
+bay´ esienne
+Christine Keribin
+Introduction
+Estimation
+Loi a priori
+Intervalle de
+confiance
+Test d’hypoth` esesD´ ecision bay´ esienne
+Soitℓ(θ, δ) une fonction de perte, et πune loi a priori,
+D´ efinition
+Le coˆ ut moyen a posteriori ou risque a posteriori est d´ efini
+par
+ρ(π, δ|X) = I Eπ[ℓ(θ, δ(X))|X]
+,→Le probl` eme change suivant les donn´ ees (qui sont
+connues)...
+D´ efinition
+Le risque int´ egr´ e est d´ efini par
+r(π, δ) = I Eπ[R(θ, δ)]
+o` uR(θ, δ) = I E θ[ℓ(θ, δ(X))]est le risque (fr´ equentiste)
+,→on associe un nombre r´ eel ` a chaque estimateur : ordre
+total sur les estimateurs
+9/28 Cours acc´ el´ er´ e
+Statistiques
+Partie 3:
+Introduction ` a la
+statistique
+bay´ esienne
+Christine Keribin
+Introduction
+Estimation
+Loi a priori
+Intervalle de
+confiance
+Test d’hypoth` esesEstimateur de Bayes
+D´ efinition
+Un estimateur de Bayes associ´ e ` a une loi a priori πet une
+fonction de coˆ ut ℓest un estimateur δπminimisant le risque
+int´ egr´ e r(π, δ)
+r(π) =r(π, δπ)est appel´ e risque de Bayes
+Th´ eor` eme (M´ ethode de calcul de l’estimateur de Bayes)
+S’il existe une d´ ecision δde risque int´ egr´ e fini r(π, δ)<∞
+et si
+∀x∈ X, δπ(x) = Arg min
+δρ(π, δ|x)
+alorsδπ(X)est un estimateur bay´ esien.
+10/28 Cours acc´ el´ er´ e
+Statistiques
+Partie 3:
+Introduction ` a la
+statistique
+bay´ esienne
+Christine Keribin
+Introduction
+Estimation
+Loi a priori
+Intervalle de
+confiance
+Test d’hypoth` esesExemples
+Th´ eor` eme
+L’estimateur de Bayes associ´ e ` a la loi a priori πet au coˆ ut
+quadratique : ℓ(θ, δ) =||θ−δ||2est la moyenne a posteriori
+Th´ eor` eme
+L’estimateur de Bayes associ´ e ` a la loi a priori πet ` a la perte
+L1:ℓ(θ, δ) =|θ−δ|est la m´ ediane a posteriori
+Autre cas : d´ ecision binaire et perte 0 −1
+11/28 Cours acc´ el´ er´ e
+Statistiques
+Partie 3:
+Introduction ` a la
+statistique
+bay´ esienne
+Christine Keribin
+Introduction
+Estimation
+Loi a priori
+Intervalle de
+confiance
+Test d’hypoth` esesAdmissibilit´ e
+Th´ eor` eme
+Soitδπun estimateur bay´ esien associ´ e ` a la loi a priori π
+▶S’il est unique, alors il est admissible
+▶S’il est de risque de Bayes fini, alors il est admissible
+Exemple : Soit S=PXile nombre de pi` eces non conformes
+apr` es ntirages (avec remise). La proportion θde pi` eces non
+conformes est inconnue. ´Etant donn´ e S, que peut-on dire sur
+θ?
+Xi∼ B(1, θ),θ∼ U[0,1]
+[rappel Loi Beta : Y∼ Be(α, β)
+f(y) =yα−1(1−y)β−1
+B(α, β)1I[0,1](y) avec B(α, β) =Γ(α)Γ(β)
+Γ(α+β)
+I E(Y) =α/(α+β), Var( Y) =αβ/[(α+β)2(α+β+ 1)],
+Mode=( α−1)/(α+β−2)]
+12/28 Cours acc´ el´ er´ e
+Statistiques
+Partie 3:
+Introduction ` a la
+statistique
+bay´ esienne
+Christine Keribin
+Introduction
+Estimation
+Loi a priori
+Intervalle de
+confiance
+Test d’hypoth` esesMaximum a posteriori
+▶On utilise parfois l’estimateur du maximum de la loi a
+posteriori
+bθMAP = Arg max
+θπ(θ|x) = Arg max
+θπ(θ)L(θ;x)
+mais l’optimisation est souvent non triviale
+▶on peut voir la similarit´ e avec l’EMV quand ntend vers
+l’infini, o` u le MAP en retrouve les propri´ et´ es
+13/28 Cours acc´ el´ er´ e
+Statistiques
+Partie 3:
+Introduction ` a la
+statistique
+bay´ esienne
+Christine Keribin
+Introduction
+Estimation
+Loi a priori
+Intervalle de
+confiance
+Test d’hypoth` esesLois a priori
+Choix fondamental, car peut avoir de l’influence si on a peu
+de donn´ ees ; criticable et critiqu´ e !
+▶d´ etermination ` a partir de l’exp´ erience pass´ ee
+▶famille de lois conjugu´ ees
+D´ efinition
+Fest une famille conjugu´ ee par une fonction de
+vraisemblance f(x|θ), si pour toute loi a priori π∈ F, la loi
+a posteriori π(.|x)∈ F
+,→l’information apport´ ee par l’´ echantillon se traduit
+uniquement par un changement de param` etre
+14/28 Cours acc´ el´ er´ e
+Statistiques
+Partie 3:
+Introduction ` a la
+statistique
+bay´ esienne
+Christine Keribin
+Introduction
+Estimation
+Loi a priori
+Intervalle de
+confiance
+Test d’hypoth` esesLois conjugu´ ees
+f(x|θ) π(θ) π(θ|x)
+N(θ, σ2)N(µ, τ2) N
+σ2µ+τ2x
+σ2+τ2;σ2τ2
+σ2+τ2
+B(n, θ)Be(α, β) Be(α+x, β+n−x)
+P(θ) G(α, β) G(α+x, β+ 1)
+N(µ,1/θ)G(α, β)G(α+ 1/2, β+ (µ−x)2/2)
+15/28 Cours acc´ el´ er´ e
+Statistiques
+Partie 3:
+Introduction ` a la
+statistique
+bay´ esienne
+Christine Keribin
+Introduction
+Estimation
+Loi a priori
+Intervalle de
+confiance
+Test d’hypoth` esesLois non informatives
+Comment choisir une loi a priori quand on n’a pas
+d’information ?
+▶approche de Laplace : loi uniforme
+▶peut ˆ etre impropre
+Rem : une loi impropre est d´ efinie comme une mesure positive, ce
+qui est licite tant que la vraisemblance int´ egr´ ee est finie presque
+sˆ urement
+▶n’est pas invariante par reparam´ etrisation
+▶approche de Jeffreys : π∗(θ)∝[det(I(θ))]1/2o` uIest
+l’information de Fisher
+▶est invariante par reparam´ etrisation
+16/28 Cours acc´ el´ er´ e
+Statistiques
+Partie 3:
+Introduction ` a la
+statistique
+bay´ esienne
+Christine Keribin
+Introduction
+Estimation
+Loi a priori
+Intervalle de
+confiance
+Test d’hypoth` esesIntervalle de cr´ edibilit´ e
+D´ efinition
+Un intervalle de cr´ edibilit´ e est un ensemble C(x)de
+probabilit´ e a posteriori 1−αpourθ
+π(θ∈C(X)|X=x) = 1−α
+Ici,θest la variable al´ eatoire (alors que c’est l’IC qui est la
+variable al´ eatoire en fr´ equentiste).
+D´ efinition (Intervalle High Posterior Density)
+Un intervalle de cr´ edibilit´ e HPD est un ensemble C(x)de
+probabilit´ e a posteriori 1−αpourθcontenant les θde plus
+haute densit´ e. Il est de la forme
+C(X) ={θ;π(θ|x)≥kα}
+17/28 Cours acc´ el´ er´ e
+Statistiques
+Partie 3:
+Introduction ` a la
+statistique
+bay´ esienne
+Christine Keribin
+Introduction
+Estimation
+Loi a priori
+Intervalle de
+confiance
+Test d’hypoth` esesTests
+▶(H0) :θ∈Θ0contre ( H1) :θ /∈Θ0
+▶proc´ edure de test : δ(x) = 1 si on conserve ( H0),
+δ(x) = 0 si on rejette ( H0)
+Th´ eor` eme
+Si la d´ ecision est binaire : δ= 1siθ∈Θ0;δ= 0siθ∈Θ1
+et la fonction de perte en 0-1 pond´ er´ ee
+ℓ(θ, δ) =a01Iδ=01Iθ∈Θ0+a11Iδ=11Iθ∈Θ1
+l’estimateur de Bayes est d´ efini par
+δ(X) = 1 ssiI Pπ(Θ0|X)≥a1
+a0I Pπ(Θ1|X)
+18/28 Cours acc´ el´ er´ e
+Statistiques
+Partie 3:
+Introduction ` a la
+statistique
+bay´ esienne
+Christine Keribin
+Introduction
+Estimation
+Loi a priori
+Intervalle de
+confiance
+Test d’hypoth` esesPreuve
+▶(H0) :θ∈Θ0contre ( H1) :θ /∈Θ0
+▶proc´ edure de test : δ(x) = 1 si on conserve ( H0),
+δ(x) = 0 si on rejette ( H0)
+▶ℓ(θ, δ) =a01Iδ=01Iθ∈Θ0+a11Iδ=11Iθ∈Θ1
+ρ(π, δ(x)|x) =Z
+Θℓ(θ, δ(x))π(θ|x)dθ
+=a01Iδ(x)=0Z
+Θ0π(θ|x)dθ
+|{z}
+I Pπ(θ∈Θ0|x)+a11Iδ(x)=1Z
+Θ1π(θ|x)dθ
+|{z}
+I Pπ(θ /∈Θ0|x)
+` a minimiser en δ(x) :
+▶sia0I Pπ(θ∈Θ0|x)>a1I Pπ(θ /∈Θ0|x) alors δ(x) = 1,
+on accepte ( H0)
+▶sia0I Pπ(θ∈Θ0|x)<a1I Pπ(θ /∈Θ0|x) alors δ(x) = 0,
+on rejette ( H0)
+19/28 Cours acc´ el´ er´ e
+Statistiques
+Partie 3:
+Introduction ` a la
+statistique
+bay´ esienne
+Christine Keribin
+Introduction
+Estimation
+Loi a priori
+Intervalle de
+confiance
+Test d’hypoth` esesExemple
+Tester θ <0 dans le mod` ele X1∼ N(θ, σ2),θ∼ N(ξ, τ2),
+´ echantillon avec une seule observation.
+20/28 Cours acc´ el´ er´ e
+Statistiques
+Partie 3:
+Introduction ` a la
+statistique
+bay´ esienne
+Christine Keribin
+Introduction
+Estimation
+Loi a priori
+Intervalle de
+confiance
+Test d’hypoth` esesLe facteur de Bayes
+Pour s’affranchir du poids de l’a priori :
+D´ efinition
+Le facteur de Bayes est le rapport des probabilit´ es a
+posteriori sur les probabilit´ es a priori
+Bπ
+21=I Pπ(θ∈Θ0|X)
+I Pπ(θ∈Θ1|X)÷I Pπ(θ∈Θ0)
+I Pπ(θ∈Θ1)
+=R
+Θ0L(θ|x)π0(θ)dθR
+Θ1L(θ|x)π1(θ)dθ=m0(x)
+m1(x)
+π0etπ1sont les lois a priori sous (H0)et(H1)
+C’est un rapport de vraisemblance int´ egr´ ee sur chaque
+espace des param` etres
+21/28 Cours acc´ el´ er´ e
+Statistiques
+Partie 3:
+Introduction ` a la
+statistique
+bay´ esienne
+Christine Keribin
+Introduction
+Estimation
+Loi a priori
+Intervalle de
+confiance
+Test d’hypoth` esesLe facteur de Bayes pour le choix de mod` ele
+Une autre vision : ,→un probl` eme de s´ election de mod` ele :
+▶M= 1 :{θ;θ <0}
+▶M= 2 :{θ;θ >0}
+Une proc´ edure de Bayes choisit le mod` ele kqui maximise la
+loi a posteriori I Pπ(M=k|X)
+▶l’a priori πest donc d´ efini sur une collection d’indices
+{1, . . . , K}, et conditionnellement ` a chaque mod` ele k,
+sur l’espace des param` etres correspondant Θ k
+π=p1π1(θ) +. . .+pkπK(θ)
+▶l’a posteriori
+I Pπ(M=k|X) =pkR
+L(θk|x)πk(θk)dθkP
+jpjR
+L(θj|x)πj(θj)dθj
+22/28 Cours acc´ el´ er´ e
+Statistiques
+Partie 3:
+Introduction ` a la
+statistique
+bay´ esienne
+Christine Keribin
+Introduction
+Estimation
+Loi a priori
+Intervalle de
+confiance
+Test d’hypoth` esesLe facteur de Bayes
+D´ efinition
+Le facteur de Bayes est le rapport des probabilit´ es a
+posteriori sur les probabilit´ es a priori
+Bπ
+21=I Pπ(M= 2|X)/I Pπ(M= 1|X)
+p2/p1
+=R
+Θ2L(θ2|x)π2(θ2)dθ2R
+Θ1L(θ1|x)π1(θ1)dθ1=m2(x)
+m1(x)
+C’est un rapport de vraisemblance int´ egr´ ee sur l’espace des
+param` etres
+A mettre en parall` ele du rapport de vraisemblance
+fr´ equentiste
+max θ∈Θ2L(θ;x)
+max θ∈Θ1L(θ;x)
+23/28 Cours acc´ el´ er´ e
+Statistiques
+Partie 3:
+Introduction ` a la
+statistique
+bay´ esienne
+Christine Keribin
+Introduction
+Estimation
+Loi a priori
+Intervalle de
+confiance
+Test d’hypoth` esesEchelle de Jeffreys
+Le facteur de Bayes est un rapport de vraisemblance
+”bay´ esien”. L’´ evidence apport´ ee par les donn´ ees est calibr´ ee
+par l’´ echelle de Jeffreys
+▶si 0<log10(Bπ
+21)≤0.5, l’´ evidence contre M= 1 est
+faible
+▶si 0.5<log10(Bπ
+21)≤1, l’´ evidence contre M= 1 est
+substantielle
+▶si 1<log10(Bπ
+21)≤2, l’´ evidence contre M= 1 est forte
+▶si log10(Bπ
+21)>2, l’´ evidence contre M= 1 est d´ ecisive
+Remarque : attention ` a l’utilisation de lois impropres
+24/28 Cours acc´ el´ er´ e
+Statistiques
+Partie 3:
+Introduction ` a la
+statistique
+bay´ esienne
+Christine Keribin
+Introduction
+Estimation
+Loi a priori
+Intervalle de
+confiance
+Test d’hypoth` esesCalcul du facteur de Bayes par simulation
+▶Objectif : Proposer une m´ ethode g´ en´ erique pour calculer
+I= I E f[h(X)] =Z
+Xh(x)f(x)dx
+▶Solution : simulation par Monte Carlo
+Utiliser un ´ echantillon iid ( X1, . . . , Xn) de loi de densit´ e
+fpour approximer l’int´ egrale Ipar la moyenne
+empirique
+bhn=1
+nnX
+i=1h(xi)
+qui converge par la Loi des Grands Nombres
+bhn→I Ef[h(X)]
+25/28 Cours acc´ el´ er´ e
+Statistiques
+Partie 3:
+Introduction ` a la
+statistique
+bay´ esienne
+Christine Keribin
+Introduction
+Estimation
+Loi a priori
+Intervalle de
+confiance
+Test d’hypoth` esesPr´ ecision de la m´ ethode Monte Carlo
+▶La variance de l’estimation est Var( bhn) = Var( h(X1))/n
+estim´ ee par
+bvn:=\Var(bhn) =1
+n1
+n−1nX
+i=1(h(xi)−bhn)2
+▶Asymptotiquement ( ngrand) et si I E( h(x)2)<∞
+bhn−I Ef[h(X)]√bvnappr∼ N (0,1)
+d’o` u indication de la pr´ ecision de l’approximation
+obtenue
+26/28 Cours acc´ el´ er´ e
+Statistiques
+Partie 3:
+Introduction ` a la
+statistique
+bay´ esienne
+Christine Keribin
+Introduction
+Estimation
+Loi a priori
+Intervalle de
+confiance
+Test d’hypoth` esesImportance sampling
+▶La simulation ` a partir de f(densit´ e cible) n’est pas
+n´ ecessairement de plus faible variance
+▶Une alternative ` a l’´ echantillonnage direct est
+l’´ echantillonnage pr´ ef´ erentiel ou pond´ er´ e
+I Ef[h(X)] =Z
+Xh(x)f(x)
+g(x)g(x)dx
+qui permet d’utiliser une loi instrumentale g
+,→tirer l` a o` u les observations ont de l’importance
+27/28 Cours acc´ el´ er´ e
+Statistiques
+Partie 3:
+Introduction ` a la
+statistique
+bay´ esienne
+Christine Keribin
+Introduction
+Estimation
+Loi a priori
+Intervalle de
+confiance
+Test d’hypoth` esesImportance Sampling
+▶Convergence : si Xi∼giid, alors
+bhn=1
+nnX
+i=1f(Xi)
+g(Xi)h(Xi)→Z
+Xh(x)f(x)dx= I E f[h(X)]
+pour n’importe quel choix de loi instrumentale gde
+support contenant celui de f
+▶choisir gfacile ` a simuler
+▶l’estimateur bhndoit avoir une variance finie :
+Z
+Xh(x)2f(x)2/g(x)dx<∞
+▶donc gdoit ˆ etre ` a queues plus ´ epaisses que f
+28/28

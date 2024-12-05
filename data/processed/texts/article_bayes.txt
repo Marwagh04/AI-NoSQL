@@ -1,0 +1,450 @@
+31 REVUE  EXPERTS N° 172 - FÉVRIER 2024CHRONIQUE SCIENCES ET CRIMES
+En quête du 
+raisonnement bayésien
+Dans le contexte judiciaire, le raisonnement 
+bayésien offre une approche logique et rigou -
+reuse pour évaluer la nature d’une trace, la 
+source de cette trace et l’activité ayant mené au 
+dépôt de cette trace, qu’il s’agisse de sperme, 
+de sang, de morsures, de /f_ibres textiles ou de 
+résidus de tir, etc. À travers l’exposition de 
+divers scénarios /f_ictifs, cet article qui se veut 
+pédagogique met en lumière les bases fonda -
+mentales de l’approche bayésienne permettant 
+l’évaluation probabiliste des traces et indices.  
+INTRODUCTION
+Considérons un exemple, sur lequel nous reviendrons 
+ultérieurement pour une analyse plus détaillée du 
+point de vue mathématique. Imaginons deux urnes 
+distinctes  : la première contenant 14 boules (dont 
+10 bleues et 4 rouges) et la seconde en possédant 
+12 (dont 4 bleues et 8 rouges). Un joueur qui a les 
+yeux bandés effectue un tirage aléatoire d’une boule. 
+Initialement, il y a 1 chance sur 2 que la boule pro -
+vienne de la première urne et 1 chance sur 2 qu’elle 
+provienne de la deuxième urne. Lorsque le bandeau 
+est retiré, le joueur constate que la boule tirée est 
+rouge. Cette observation représente une donnée 
+nouvelle et cruciale ! En utilisant le théorème de 
+Bayes, formulé par le mathématicien britannique 
+Thomas Bayes (1702-1761) bien connu du joueur, 
+une réévaluation est opérée : il y a maintenant environ 
+1 chance sur 3 que la boule provienne de la première 
+urne. La probabilité que la boule tirée provienne de la 
+première urne a été réévaluée à la baisse simplement 
+en prenant en compte la couleur de la boule !       
+     Dans le contexte judiciaire, la logique bayésienne 
+revêt une importance capitale. Les découvertes de 
+nouveaux éléments, comme des résidus de tir sur 
+un suspect, peuvent considéraElement inÁuencer les 
+convictions des enquêteurs et ainsi (re)-orienter le 
+déroulement de leurs investigations. Le théorème de 
+Bayes représente une méthode sophistiquée pour ré -
+viser la probabilité d’un événement en tenant compte 
+de nouvelles informations ou données. Ce théorème, 
+que nous avons utilisé au début de cette introduction 
+pour résoudre le problème des urnes, s’applique éga -
+lement de manière essentielle à l’analyse rigoureuse 
+et logique des éléments de preuve, qu’il s’agisse de 
+sperme, de sanJ, de morsures, de fiEres te[tiles ou de résidus de tir [1-5]. Comme nous le verrons plus loin, 
+cette approche méthodologique offre la possibilité 
+d’évaluer de façon probabiliste la valeur d’un élément 
+de preuve, en prenant en considération les proposi -
+tions concurrentes présentées par l’accusation et la 
+déIense (n définissant clairement les responsaEilités 
+et compétences du juge et des experts, cette méthode 
+réduit les risques d’erreurs tout en garantissant le 
+respect du principe du contradictoire.   
+     Supposons maintenant qu’une victime est décédée 
+dans la nuit à son domicile à la suite d’un tir d’arme 
+à feu. L’ex-conjoint de la victime connu pour être 
+violent et détenteur d’un fusil de chasse est appréhen -
+dé par les enquêteurs cinq heures après cet événement. 
+Des prélèvements sont réalisés par tamponnement sur 
+ses mains et son tee-shirt. Les examens ont révélé la 
+présence d’une seule particule caractéristique d’un tir 
+Guillaume 
+Boudarham 
+Directeur du Laboratoire 
+pluridisciplinaire de 
+criminalistique 
+Docteur en physique
+Professeur de physique 
+en écoles d’ingénieurs 
+Titulaire d’un diplôme 
+universitaire en 
+criminalistique
+Expert de justice 
+près la cour d’appel de 
+Versailles
+Thomas Bayes (mathématicien, pasteur, philosophe). 32 REVUE  EXPERTS N° 172 - FÉVRIER 2024CHRONIQUE SCIENCES ET CRIMES
+d’arme à feu sur le tamponnoir réalisé sur les mains 
+de l’individu. En utilisant le théorème de Bayes pour 
+évaluer de manière probabiliste les résidus de tir, 
+l’expert pourrait déterminer la probabilité d’observer 
+une seule particule caractéristique d’un tir d’arme à 
+feu sur les mains de l’individu s’il n’a pas tiré avec 
+une arme à feu, ainsi que la probabilité d’observer 
+une telle particule s’il a tiré avec une arme à feu. Le 
+rapport entre ces deux probabilités aiderait à éva -
+luer dans quelle mesure cette observation soutient 
+les propositions de l’accusation et de la défense.   
+     La compréhension et l’application appropriée 
+de cette approche sont cruciales pour prévenir des 
+erreurs judiciaires, telles que celle qui s’est produite 
+au Royaume-Uni. L’affaire Sally Clark est une af -
+faire judiciaire emblématique qui s’est déroulée au 
+Royaume-Uni et qui a mis en lumière l’utilisation 
+incorrecte du raisonnement bayésien en médecine 
+légale [6, 7]. Sally Clark, une avocate britannique, a 
+été accusée j tort du meurtre de ses deu[ fils, &Kris -
+topher et Harry, en 1996 et 1998. Elle a été condamnée 
+en 1999 et a passé plus de trois ans en prison avant 
+qu’un appel réussi n’annule sa condamnation en 
+2003. L’affaire s’appuie sur l’utilisation erronée des 
+statistiques dans le témoignage d’experts lors du 
+procès de Sally Clark. Deux experts médicaux ont 
+témoigné que la probabilité d’avoir deux enfants morts 
+du syndrome de mort subite du nourrisson (SMSN) 
+au sein de la même famille était extrêmement faible, 
+ce qui a conduit le jury à conclure à tort qu’il était 
+hautement improbable que les décès des deux enfants 
+de Sally Clark soient dus au hasard. Dans le cas de 
+Sally Clark, les experts médicaux n’ont pas correcte -
+ment appliqué le raisonnement bayésien pour évaluer 
+la probabilité des décès de ses enfants. Ils ont omis 
+de prendre en compte d’autres facteurs qui auraient 
+dû être inclus dans le calcul, tels que la prévalence 
+réelle du SMSN et la possibilité que d’autres causes 
+médicales puissent expliquer les décès. Lors de 
+l’appel, de nouveaux éléments de preuve, y compris 
+des témoignages d’experts médicaux révisés, ont 
+été présentés. Ces témoignages ont montré que les 
+statistiques présentées lors du procès original étaient 
+incorrectes, et que les décès des enfants de Sally 
+Clark n’étaient pas aussi rares qu’on le prétendait. 
+Les nouvelles preuves ont révélé qu’il y avait chez les 
+enfants des problèmes médicaux sous-jacents qui expli -quaient leur décès 6all\ &larN a finalement été acquit -
+tée en janvier 2003 et sa condamnation a été annulée. 
+L’affaire a mis en lumière les dangers de l’utili -
+sation inappropriée des statistiques, en particu -
+lier dans le contexte médical. Elle a également 
+conduit à un réexamen des enquêtes criminelles 
+liées au SMSN et a sensibilisé le public aux er -
+reurs possibles dans le raisonnement bayésien 
+et à l’importance d’une utilisation précise des 
+preuves statistiques dans les affaires criminelles. 
+1. NOTATIONS
+Dans  la suite,  nous utiliserons les notations suivantes :
+- P(A) : probabilité de l’événement A ;
+- P(A / B) : probabilité de A sachant B ;
+- P(~A) = 1 – P(A)  ;
+ Remarque : ~A représente l’événement complé -
+mentaire de A. L’événement complémentaire est un 
+événement qui représente toutes les issues possibles 
+qui ne font pas partie de l’événement original. Par 
+exemple, si nous considérons l’événement  A comme 
+« obtenir un chiffre pair en lançant un dé à six 
+faces  », son événement complémentaire serait « ob-
+tenir un chiffre impair en lançant un dé à six faces » .
+2. PROBLÈME DES URNES
+Dans un souci de pédagogie, avant de s’intéres -
+ser à des situations plus complexes rencontrées en 
+sciences forensiques, nous allons illustrer l’appli -
+cation du théorème de Bayes à travers un exemple 
+élémentaire que nous avions évoqué en introduction.
+ Une première urne contient 14 boules  : 10 boules 
+bleues et 4 boules rouges ; une deuxième urne contient 
+12 boules : 4 boules bleues et 8 boules rouges (voir 
+fiJure  8ne personne qui a les \eu[ Eandés tire une 
+boule au hasard. Il lui est ensuite demandé d’indiquer 
+l’urne d’origine de la boule tirée. Il est clair qu’il y a 
+1 chance sur 2 que la boule tirée provienne de l’urne 
+1 et 1 chance sur 2 qu’elle provienne de l’urne 2, ce 
+qui s’écrit formellement : P(boule vient de l’urne 1) = 
+0.5 (50 %) et P(boule vient de l’urne 2) = 0.5 (50 %). 
+Ensuite, le bandeau est retiré, lui permettant ainsi de 
+voir la couleur de la boule qu’elle a tirée, qui s’avère 
+être rouge. Connaissant la composition des urnes, on 
+lui demande de réévaluer la probabilité que la boule 
+ait été tirée de l’urne 1. Ce problème est moins intuitif 
+que le précédent mais il peut être résolu en appliquant 
+Figure 1 : Deux urnes de composition connue pour illustrer le théorème de Bayes.
+ 33 REVUE  EXPERTS N° 172 - FÉVRIER 2024CHRONIQUE SCIENCES ET CRIMES
+le théorème de Bayes qui conduit à (voir partie 3) : 
+Avec :
+P(boule vient de l’urne 1) = 1/2 = 0.5  ;
+P(boule vient de l’urne 2) = 1/2 = 0.5  ;
+3Eoule rouJe _ Eoule Yient de l·urne     Ⱦ   
+(nombre de boules rouges de l’urne 1 divisé par le 
+nombre de boules total de l’urne 1) ;
+3Eoule rouJe _ Eoule Yient de l·urne     Ⱦ   
+(nombre de boules rouges de l’urne 2 divisé par le 
+nombre de boules total de l’urne 2)
+et P(boule rouge) = P(boule rouge | boule vient de 
+l’urne 1) × P(boule vient de l’urne 1) + P(boule 
+rouge | boule vient de l’urne 2) × P(boule vient de 
+l·urne     ð    ð    
+Finalement :
+La connaissance de la couleur de la boule tirée (rouge) 
+lui a permis de réduire la probabilité qu’elle ait été 
+tirée de l’urne 1 (50 %      30 %).
+3. THÉORÈME DE BAYES
+Étant donnés deux événements A et B, le théorème 
+de Bayes permet de déterminer la probabilité de « A 
+sachant B » , si on connaît les probabilités de A, B et de  
+« B sachant A »  :
+P(A)  et P(B)  sont les probabilités a priori de A et B ;
+P(A | B)  est la probabilité conditionnelle de A sachant 
+B ou probabilité a posteriori  ;
+P(B | A)  est la probabilité conditionnelle de B sachant 
+A ou probabilité a posteriori.
+P(B) peut être obtenue à partir de la formule dite des 
+« probabilités totales  » : P(B) = P(B | A) × P(A) + 
+P(B |~A) × P(~A) où P(~A) = 1 – P(A) .Exemples :
+A : le suspect est la source de la trace  ;
+~A : le suspect n’est pas la source de la trace ;
+B  le profil $'1 du suspect et celui de la trace de 
+sang retrouvée sur la victime sont identiques ;
+P(A | B)  : probabilité que le suspect soit la source 
+de la trace sacKant que son profil $'1 et celui de la 
+trace de sang retrouvée sur la victime sont identiques ;
+P(B | A)   proEaEilité que le profil $'1 du suspect 
+et celui de la trace de sang retrouvée sur la victime 
+soient identiques sachant que le suspect est la source 
+de la trace.
+4. LA CONFUSION DES INVERSES
+Un homicide a été commis à Poitiers et une trace 
+de sang appartenant à l’agresseur a été retrou -
+vée sur la victime. Selon les enquêteurs, l’agres -
+seur est un habitant de Poitiers. Un suspect 
+« H » est arrrté 6on profil Jénétique est iden -
+tique à celui de la trace retrouvée sur la victime.
+Dans son rapport, l’expert en charge du dossier in -
+dique que : « la SroEaEilitp d·oEserYer un tel Srofil 
+si la trace a été laissée par un inconnu non appa -
+renté au suspect est de 1/1 milliard (probabilité de 
+coïncidence fortuite) » .
+ L’interprétation suivante de cette indication 
+serait fallacieuse : « la probabilité que H ne soit 
+pas la source de la trace est de 1/1 milliard et 
+donc la probabilité que H soit la source de la 
+trace est de 1 - 1/1 milliard = 99.9999999 % » .
+Formellement, cela reviendrait à écrire :
+3Srofils A'1 identiTues _ + n·est Sas la sourFe 
+de la trace) = P(H n’est pas la source de la trace | 
+Srofils A'1 identiTues    milliard
+et donc :
+3+ est la sourFe de la traFe _ Srofils A'1 identiTues 
+= 1 – 1/1 milliard = 99.9999999 %.
+ Cette erreur, connue sous le nom de « confu -
+sion des inverses » [6, 7], conduirait à une conclu -
+sion erronée selon laquelle le suspect est incon -
+testablement la source de la trace, alors que ce 
+n’est pas forcément le cas puisque l’égalité sui -
+vante est fausse : 3Srofils A'1 identiTues _ + 
+Figure 2 : 5éseau ba\ésien du problqme. 8ne Áqche représente une dépendance.
+ 34 REVUE  EXPERTS N° 172 - FÉVRIER 2024CHRONIQUE SCIENCES ET CRIMES
+n’est pas la source de la trace) = P(H n’est pas 
+la sourFe de la traFe _ Srofils A'1 identiTues
+    D’une manière générale, comme le montre le  
+théorème de Bayes (voir partie 3), la probabilité 
+de A sachant B  n’est pas égale à la probabilité  
+de B sachant A  : 3A _ % ȴ 3% _ A  (exemple  : 
+la probabilité que ma voiture ne démarre pas 
+s’il n’y a plus d’essence est égale à 1 ou 100 % 
+(certitude) mais la probabilité qu’il n’y ait plus 
+d’essence si ma voiture ne démarre pas n’est pas 
+égale à 1 puisqu’il y a d’autres causes possibles qui 
+peuvent expliquer que ma voiture ne démarre pas).
+     Il est impératif d’intégrer des informations sup -
+plémentaires et d’appliquer proprement le théo -
+rème de Bayes. Les variables peuvent être repré -
+sentées sous la forme d’un graphe intuitif appelé 
+© réseau Ea\ésien ª voir fiJure  'ans la suite, 
+on tiendra compte des taux de faux positifs et né -
+gatifs des tests ADN pour plus de généralité. Un 
+test positiI néJatiI siJnifie que les profil $'1 
+du suspect et de la trace retrouvée sur la victime 
+ne sont pas différentiables (sont différentiables).
+ On a :
+- P(H est la source de la trace) = 1/100 000 (popu -
+lation suspectale composée de 100 000 personnes)  ;
+- 3Srofils A'1 identiTues _ + est la sourFe de la 
+trace) = 1 (certitude) ;
+ - 3Srofils A'1 identiTues _ + n·est Sas la sourFe de 
+la trace) = 1/1 milliard (probabilité de coïncidence 
+fortuite) ;
+- 3test SositiI _ Srofils A'1 diIIprents     
+(taux de faux positifs) ;
+- 3test npJatiI _ Srofils A'1 identiTues     
+(taux de faux négatifs).
+     À partir du théorème de Bayes, on trouve 
+(résolution à l’aide du logiciel Elvira  s p é c i a -
+lisé dans la construction de réseaux bayésiens) :
+- P(H n’est pas la source de la trace | test négatif) 
+= 99.9999999 %
+- P(H est la source de la trace | test positif) = 9.09 % .
+       Cet exemple montre que si le résultat est positif 
+(« match »), la probabilité que le suspect soit la 
+source de la trace est trop basse (9,09 %) pour 
+conclure de manière définitive qu’il est eIIective -
+ment la source de la trace. Cependant, en cas de 
+résultat négatif, la probabilité que le suspect ne soit 
+pas la source de la trace est suIfisamment élevée ! 
+99,99 %) pour permettre de conclure avec un degré 
+de croyance élevé qu’il n’est pas la source de la 
+trace. Le fait de savoir que le résultat du test ADN 
+est positif a malgré tout permis de gagner 4 ordres 
+de grandeur sur la probabilité que le suspect soit la 
+source de la trace (1/100 000 = 0.001 %  9.09 %).
+        Remarque : la probabilité de coïncidence fortuite 
+choisie ici permet d’illustrer notre propos. En pratique, 
+cette valeur peut être de 1 sur plusieurs milliards. En 
+outre, les taux de faux positifs et négatifs peuvent 
+aussi être plus faibles. Pour une probabilité de coïnci -
+dence fortuite de 1/mille milliards et taux de faux po -sitifs = taux de faux négatifs = 1/1million, on trouve  : 
+P(H est la source de la trace | test positif) = 90.91  % 
+soit une probabilité environ 10 fois plus élevée.
+5. LE RAPPORT DE VRAISEMBLANCE
+$fin de quantifier le poids apporté par un indice au 
+regard de deux propositions compétitives (accusation 
+vs défense), l’expert doit comparer la probabilité  
+d’observer les résultats sur la trace d’intérêt si la pro -
+position (ou hypothèse) de l’accusation est vraie avec 
+la probabilité d’observer ces résultats si la proposition 
+de la défense est vraie. Ces propositions peuvent 
+concerner la nature de la trace, la source de cette trace 
+et l’activité ayant mené au dépôt de cette trace. L’ex -
+pert détermine le rapport entre ces deux probabilités 
+appelé « rapport de vraisemblance » noté RV [1-3] :
+Le thèorème de Bayes conduit à :
+ Le premier terme traduit la croyance actualisée ( a 
+posteriori ) dans la véracité de la proposition, c’est-à-
+dire après avoir pris connaissance des observations 
+du laboratoire ; le deuxième terme ( RV) est le rapport 
+de vraisemElance défini précédemment domaine de 
+compétence de l’expert). Le troisième terme traduit 
+la croyance a priori  dans la véracité de la proposition 
+(domaine de compétence des enquêteurs et des ma -
+gistrats en fonction des éléments recueillis au cours 
+de l’enquête).
+6. APPLICATION
+Lors d’une soirée étudiante qui rassemble 100 
+hommes et 50 femmes, une femme déclare avoir 
+été violée. D’après les enquêteurs, l’agresseur est l’un 
+des hommes présents à la soirée. Une trace de sperme 
+appartenant à l’agresseur est retrouvée sur la victime. 
+Un suspect « H » est arrrté 6on profil Jénétique est 
+identique à celui de la trace retrouvée sur la victime.
+ Dans son rapport, l’expert en charge du dossier 
+indique : « la SroEaEilitp d·oEserYer un tel Srofil si la 
+trace a été laissée par un inconnu non apparenté au 
+suspect est de 1/1 milliard (probabilité de coïncidence 
+fortuite) » .
+ Par souci pédagogique, nous ne tiendrons 
+pas compte dans la suite des taux de faux posi -
+tifs et négatifs que nous supposerons nuls.
+Deux propositions alternatives sont mises en com -
+pétition :
+• proposition de l’accusation  : « H est la source 
+de la trace »  ;
+• proposition de la défense : « un inconnu non 
+ 35 REVUE  EXPERTS N° 172 - FÉVRIER 2024CHRONIQUE SCIENCES ET CRIMES
+apparenté à H est la source de la trace »  ou plus 
+simplement « H n’est pas la source de la trace » .
+    /a proEaEilité que le profil $'1 du suspect et 
+celui de la trace retrouvée sur la victime soient 
+identiques si le suspect est la source de la trace 
+est de 1 soit 100 % (certitude) d’où 3Srofils A'1 
+identiques | H est la source de la trace) = 1 . La 
+proEaEilité que le profil $'1 du suspect et celui de 
+la trace retrouvée sur la victime soient identiques si 
+le suspect n’est pas la source de la trace est de 1/1 
+milliard = 1/ 1 000 000 000 (probabilité de coïnci -
+dence fortuite) d’où 3Srofils A'1 identiTues _ + 
+n’est pas la source de la trace) = 1/ 1 000 000 000 .
+On a donc :
+Soit RV = 1 000 000 000 (1 milliard).
+     Dans son rapport, l’expert pourrait indiquer selon 
+une échelle verbale graduée qui traduit la valeur 
+numérique de  RV [1] : « les résultats observés sou -
+tiennent très fortement la proposition de l’accusation 
+par rapport à la proposition de la défense.  »
+Ou aussi : P(H est la source de la trace) = 1/100 
+(la source de la trace est  a priori l’un des 100 
+hommes présents à la soirée)  et P(H n’est pas  
+la source de la trace) = 1 – 1/100 = 99/100 . 
+Le rapport des probabilités  a priori  est donc :
+Le rapport des probabilités a posteriori  est alors 
+obtenu en multipliant le rapport des probabilités a 
+priori avec le rapport de vraissemblance :
+     Finalement : « SuisTue le Srofil A'1 du susSeFt 
+et celui de la trace de sperme retrouvée sur la vic -
+time sont identiques, il est 10 millions de fois plus 
+probable que le suspect soit la source de la trace 
+plutôt qu’un autre parmi les hommes présents à la 
+soirée. »
+  L e  j u g e  p o u r r a  a l o r s  c o n c l u r e  a v e c  u n  d e -
+gré de croyance élevé que le suspect est la 
+source de la trace retrouvée sur la victime.CONCLUSION
+Dans le contexte des sciences forensiques, l’approche 
+bayésienne offre une méthode permettant d’évaluer 
+de manière probabiliste la valeur d’un élément de 
+preuve en tenant compte de deux propositions en 
+compétition avancées par l’accusation et la défense. 
+Cette approche apporte une plus grande clarté quant 
+aux rôles et compétences respectifs des magistrats 
+et des e[perts scientifiques, tout en réduisant les 
+risques d’erreur et en respectant le principe de la 
+contradiction. Cependant, il est important de noter 
+que cette approche repose sur des données qui ne 
+sont pas toujours disponibles, telles que les proba -
+bilités  a priori , le choix des variables à prendre en
+compte, et l’indépendance de ces variables ou des 
+variables qui ne font pas consensus telles que la po -
+pulation de référence pour calculer les probabilités de 
+coïncidence fortuite. Par ailleurs, cette méthode peut 
+rtre source de conIusion ou de méfiance cKe] les per -
+sonnes qui ne possèdent pas une Iormation scientifique 
+comme les juges, les avocats, les jurés, voire même 
+certains praticiens. Les réseaux bayésiens se pré -
+sentent comme une solution prometteuse pour mo -
+déliser et analyser des systèmes complexes, en 
+simplifiant la manipulation d’équations matKéma -
+tiques. L’utilisation de logiciels spécialisés facilite 
+le calcul des probabilités  a posteriori , en particu -
+lier dans les cas complexes où de nombreuses va -
+riables sont en jeu. Cette approche est déjà employée 
+avec succès dans le domaine des expertises ADN, 
+et elle pourrait être étendue à d’autres domaines 
+tels que la morphoanalyse des traces de sang [8].
+BIBLIOGRAPHIE
+• 1. ENFSI guidelines for evaluative reporting in forensic 
+science: Strengthening the Evaluation of Forensic Results 
+across Europe , 2015.
+• 2. Raphaël Coquoz, Jennifer Comte, Diana Hall, Tacha 
+Hicks et Franco Taroni, Preuve par l’ADN - La génétique 
+au service de la justice , EPFL Presses polytechniques et 
+universitaires romandes, 2013.
+• 3. Colin Aitken, Franco Taroni et Silvia Bozza, Statistics 
+and the evaluation of evidence for forensic scientists, 
+John Wiley & Sons, 2020.
+• 4. Alain Gallusser, Damien Rhumorbarbe et Denis Werner, 
+Traces d’armes à feu - Expertise des armes et des élé -
+ments de munitions dans l’investigation criminelle , EPFL 
+Presses polytechniques et universitaires romandes, 2022.
+• 5. Aimé Conigliaro, Charles Georget et Lise Malfroy Ca -
+mine, La morphoanalyse des traces de morsures , Revue 
+Experts , n° 167, 2023, pp. 24-28.
+• 6. Leila Shneps, Statistiques, probabilités et justice, Cahiers 
+philosophiques, vol. 155, n°4, 2018, pp. 21-36.
+• 7. Leila Schneps et Coralie Colmez, Math on Trial : How 
+Numbers Get Used and Abused in the Courtroom , Basic 
+Books, 2013.
+• 8. Daniel Attinger, Kris de Brabanter et Christophe Cham -
+pod, Using the likelihood ratio in bloodstain pattern ana -
+lysis, Journal of Forensic Sciences, 2021.
+MOTS-CLÉS : G UILLAU ME BOUDARHA M / ADN / CRIMINEL / EXPERTISE  / INFÉRE NCE BAYÉSIE NNE / INTERPRÉTATIO N STATISTIQUE  / JUGE / 
+PROBABILITÉ / RAPPORT  DE VRAISE MBLANCE / RÉSEAU  BAYÉSIE N / SCIENCE FORE NSIQUE / STATISTIQUE  / THÉORÈ ME DE BAYES - RÉF. : 
+ST, G, 12. WWW.REVUE -EXPERTS .COM

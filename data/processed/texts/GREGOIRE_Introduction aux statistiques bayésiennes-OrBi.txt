@@ -1,0 +1,292 @@
+Introduction aux 
+statistiques bayésiennes
+Tours, le 10/09/19
+GRÉGOIRE Coline 
+Directeur de thèse : Steve MAJERUS
+Projet de thèse : « Vers une meilleure compréhension des capacités d’inhibition dans le vieillissement »
+Application dans le vieillissement 
+avec JASP Sommaire
+Partie A –Statistiques Bayésiennes
+1. Postulats de base
+2. Facteurs de Bayes
+3. Exemples
+4. Fréquentistes  vs Bayésiennes
+Partie B –JASP
+11/09/2019 Coline GRÉGOIRE, coline.gregoire@doct.uliege.be 2 Partie A
+Introduction aux statistiques 
+bayésiennes
+11/09/2019 Coline GRÉGOIRE, coline.gregoire@doct.uliege.be 3 Statistiques bayésiennes =Degré devraisemblance (likelihood )d’un
+modèle
+Données observées vs données a priori (prior )
+Vraisemblance a posteriori (posterior )Postulat de base
+11/09/2019 Coline GRÉGOIRE, coline.gregoire@doct.uliege.be 4 Connaissances 
+préalables
+Prédiction
+DonnéesErreur de 
+prédictionMise à jour des 
+connaissancesPostulat de base
+11/09/2019 Coline GRÉGOIRE, coline.gregoire@doct.uliege.be 5 Stevens (2009)?Postulat de base: comment ça fonctionne?
+Théorème de Bayesdonnées d
+data
+Croyances antérieures
+Prior informationCroyances postérieures
+Posterior distribution
+11/09/2019 Coline GRÉGOIRE, coline.gregoire@doct.uliege.be 6 Postulat de base
+𝑷𝒉𝒅=𝑷𝒅𝒉
+𝑷(𝒅)∗𝑷(𝒉)
+Les croyances antérieures sont mises à jour à 
+l'aide des données afin de générer des 
+croyances postérieures.
+11/09/2019 Coline GRÉGOIRE, coline.gregoire@doct.uliege.be 7 Postulat de base
+𝑷𝒉𝒅=𝑷𝒅𝒉
+𝑷(𝒅)∗𝑷(𝒉)
+«Je dispose d’un parapluie. Pensez -vous qu’il va pleuvoir? »
+ℎ:hypothèse :ilvapleuvoir
+𝑑:données :Jedispose d’un parapluie
+Quelles sont les croyances antérieures ,a priori ?
+11/09/2019 Coline GRÉGOIRE, coline.gregoire@doct.uliege.be 8 Postulat de base
+𝑷𝒉𝒅=𝑷𝒅𝒉
+𝑷(𝒅)∗𝑷(𝒉)ℎ:hypothèse :peut -être qu’il vapleuvoir, oupas
+𝑑:données :Jedispose d’un parapluie
+Quelles sont les croyances antérieures ,a priori ?
+Degré decroyance
+0,45
+0,55
+1hypothèse ℎ
+11/09/2019 Coline GRÉGOIRE, coline.gregoire@doct.uliege.be 9 Postulat de base
+𝑷𝒉𝒅=𝑷𝒅𝒉
+𝑷(𝒅)∗𝑷(𝒉)
+Quelles sont les probabilités concernant les données ,leur vraisemblance ?
+0,050,80
+0,95
+0,20
+hypothèse ℎdonnées 𝑑
+Ilest important de se rappeler que chaque cellule
+de ce tableau décrit vos opinions sur les données
+qui seront conservées ,compte tenu de lavéracité
+d’une hypothèse particulière 𝒉.
+Cette «probabilité conditionnelle» est écrite
+𝑷𝒅𝒉 que vous pouvez lire comme «la
+probabilité de𝒅 étant donné𝒉».Dans les
+statistiques bayésiennes, on parle de probabilité
+dedonnées 𝒅étant donné l'hypothèse 𝒉.
+11/09/2019 Coline GRÉGOIRE, coline.gregoire@doct.uliege.be 10 Postulat de base
+𝑷𝒉𝒅=𝑷𝒅𝒉
+𝑷(𝒅)∗𝑷(𝒉)
+Quelles sont les probabilités jointes des données 𝑷(𝒅,𝒉)?
+La probabilité qu’il pleuve aujourd’hui (c’est -à-
+dire que l’hypothèse 𝒉soit vraie) etque jeporte
+un parapluie (c’est -à-dire que les données 𝒅sont
+observées) .
+𝑷𝒅,𝒉=𝑃𝑑ℎ∗𝑃ℎ
+=𝑃𝑝𝑎𝑟𝑎𝑝𝑙𝑢𝑖𝑒 ,𝑝𝑙𝑢𝑖𝑒
+=probabilité quejemesouvienne demonparapluie un
+jourdepluie20%∗priordelaprobabilité d′unjourde
+pluie45%
+=0,20∗0,45=0,090,09 0,36
+0,0275 0,5225
+0,1175 0,8825données 𝑑
+hypothèse ℎ
+11/09/2019 Coline GRÉGOIRE, coline.gregoire@doct.uliege.be 11 Postulat de base
+𝑷𝒉𝒅=𝑷𝒅𝒉
+𝑷(𝒅)∗𝑷(𝒉)
+Comment met -on à jour les croyances selon la règle de Bayes ? 
+
+0,77 0
+0,330
+1 0On vous dit que jeporte vraiment un parapluie, ce qui
+n’avait que 11,75% de chance d’arriver, alors ma
+probabilité «parapluie »=1
+plausibilité qu′ilpleuve=
+=probabilité jointe"pluieetparapluie"
+"chancestotalesdeparapluie "=P(d,h)
+P(d)
+=probabilété jointedel′hypothèse etdesdonnées
+probabilité marginale desdonnées "parapluie"
+=0,09
+0,1175=𝟎,𝟕𝟕données 𝑑
+hypothèse ℎ
+11/09/2019 Coline GRÉGOIRE, coline.gregoire@doct.uliege.be 12 Postulat de base
+𝑷𝒉𝒅=𝑷𝒅𝒉
+𝑷(𝒅)∗𝑷(𝒉)
+Comment met -on à jour les croyances selon la règle de Bayes ? 
+
+0,77 0
+0,330
+1 0La probabilité postérieure de
+pluie (sa plausibilité) àLiège en
+septembre étant donné que je
+porte un parapluie est de∶
+𝑷𝒉𝒅=77%données 𝑑
+hypothèse ℎ
+11/09/2019 Coline GRÉGOIRE, coline.gregoire@doct.uliege.be 13 Postulat de base
+𝑷𝒉𝒅=𝑷𝒅𝒉
+𝑷(𝒅)∗𝑷(𝒉)
+Comment met -on à jour les croyances selon la règle de Bayes ? 
+
+0,77 0
+0,330
+1 0𝑷𝒉𝒅=𝑷(𝒅,𝒉)
+𝑷(𝒅)
+𝒆𝒕
+𝑷𝒅,𝒉=𝑷𝒅𝒉∗𝑷(𝒉)
+𝒂𝒍𝒐𝒓𝒔
+𝑷𝒉𝒅=𝑷𝒅𝒉
+𝑷(𝒅)∗𝑷(𝒉)hypothèse ℎdonnées 𝑑
+11/09/2019 Coline GRÉGOIRE, coline.gregoire@doct.uliege.be 14 Postulat de base
+𝑷𝒉𝒅=𝑷𝒅𝒉
+𝑷(𝒅)∗𝑷(𝒉)
+Les adultes âgés ont des scores
+d’inhibition (STROOP) moins bons que les
+adultes jeunes «etde toute façon, avec
+l’avancée en âge, les performances
+diminuent ».Les adultes âgés n’ont
+peut -être pas
+systématiquement
+des scores d’inhibition
+(STROOP) moins bons
+que les adultes
+jeunes .→Implication
+théorique?Les données tendent
+àne montrer aucune
+différence entre les
+performances des
+jeunes et des âgés :
+variabilité dans les
+groupes .
+11/09/2019 Coline GRÉGOIRE, coline.gregoire@doct.uliege.be 15 𝑷𝒉𝒅=𝑷𝒅𝒉
+𝑷(𝒅)∗𝑷(𝒉)Les croyances antérieures sont mises à 
+jour à l'aide des données afin de générer 
+des croyances postérieures.
+𝑷𝑯𝟏𝒅=𝑷𝒅𝑯𝟏
+𝑷(𝒅)∗𝑷(𝑯𝟏)𝑷𝑯𝟎𝒅=𝑷𝒅𝑯𝟎
+𝑷(𝒅)∗𝑷(𝑯𝟎) 𝑯𝟎:
+𝑯𝟏:Test d’hypothèse bayésien 
+11/09/2019 Coline GRÉGOIRE, coline.gregoire@doct.uliege.be 16 Test d’hypothèse bayésien 
+𝑷𝑯𝟏𝒅=𝑷𝒅𝑯𝟏
+𝑷(𝒅)∗𝑷(𝑯𝟏)𝑷𝑯𝟎𝒅=𝑷𝒅𝑯𝟎
+𝑷(𝒅)∗𝑷(𝑯𝟎) 𝑯𝟎:
+𝑯𝟏:
+𝑷(𝑯𝟏|𝒅𝒐𝒏𝒏é𝒆𝒔 )
+𝑷(𝑯𝟎|𝒅𝒐𝒏𝒏é𝒆𝒔 )=𝑷𝒅𝒐𝒏𝒏é𝒆𝒔 𝑯𝟏
+𝑷𝒅𝒐𝒏𝒏é𝒆𝒔 𝑯𝟎∗𝑷(𝑯𝟏)
+𝑷(𝑯𝟎)
+probabilités postérieures = facteur bayésien * probabilités antérieures
+11/09/2019 Coline GRÉGOIRE, coline.gregoire@doct.uliege.be 17 • indice statistique qui quantifie l'évidence d'une
+hypothèse par rapport àune autre hypothèse .
+• occupe une place particulière dans les tests
+d'hypothèses bayésiennes, car iljoue un rôle
+similaire àlavaleur pdans les tests d'hypothèses
+orthodoxes .
+what -does -a-bayes -factor -feel-like+ wikile Facteur Bayésien 
+Coline GRÉGOIRE, coline.gregoire@doct.uliege.be 18 BF10H1
+H0
+Preuve \Quantitéd’évidence enfaveur deH0 Preuve \Quantitéd’évidence enfaveur deH1
+what -does -a-bayes -factor -feel-like+ Wagenmakers et al. 2016BF 01ou BF 10?
+19 Interprétation : que nous dit le facteur bayes?
+Les adultes âgés ont des scores d’inhibition (STROOP) moins bons que les adultes jeunes
+Test denormalité 
+Test d’égalité des variances 
+Connaissances aposteriori ?
+11/09/2019 Coline GRÉGOIRE, coline.gregoire@doct.uliege.be 20 Interprétation : que nous dit le BF?
+Expérience 1:visant àévaluer l’impact des connaissances lexico -sémantiques sur une tâche MCTv à
+l'aide d'une procédure running -span rapide :manipulation demots etnon -mots .
+Kowialiewski , B., & Majerus, S. (2018). The non -strategic nature of linguistic long -term memory effects in verbal short -term memory.
+ 21 Pour résumer
+Thèse O.Sorel +«Larègle deBayes permet larévision probabiliste, etestutilisée dans lecadre de
+probabilités conditionnelles binaires (malade /non malade sachant que jeprésente lessymptômes) .
+[…]permet deréviser notre jugement dès lors que nous obtenons une nouvelle
+information .
+Ceci équivaut àpasserd’une probabilité apriori -précédent laprise encompte du
+nouvel élément -àune probabilité aposteriori -faisant suite àlaprise de
+connaissance delanouvelle information -.»(p.28)
+Coline GRÉGOIRE, coline.gregoire@doct.uliege.be 22 statistiques 
+bayésiennes
+•Probabilité desévènements selon une
+théoriestatistiques 
+fréquentistesvs
+•Probabilité des évènements selon
+certains évènements
+Statistiques fréquentistes Statistiques bayésiennes
+• Test d’hypothèse H 0vs H 1
+• Probabilité d’observer un événement si H 0est 
+vraie
+• alpha < .05
+• Certains biais?
+• Calcul de probabilité?
+• Subjectivité
+• Que représente alpha ?• Test d’hypothèse H 0vs H 1
+• Vraisemblance d’un événement compte tenu de 
+données a priori
+• BF > 3 / >10 / >30
+• Vision moins biaisée?
+• Preuve en faveur de H0 et H1
+• Contrôle de la subjectivité
+• Mesure plus continue
+Tableau de M.Bouffier , présentation PsyNDoc11/09/2019 Coline GRÉGOIRE, coline.gregoire@doct.uliege.be 23 Partie B
+Introduction aux statistiques 
+bayésiennes avec JASP
+11/09/2019 Coline GRÉGOIRE, coline.gregoire@doct.uliege.be 24 Nécessite l’utilisation deJASP
+Gratuit :https ://jasp -stats .org/download/
+Facile d’utilisation
+Manuels JASP gratuits
+•Statistical Analysis inJASP .AGuide for Students byMark Goss -Sampson
+•Learning Statistics with JASP :ATutorial for Psychology Students and Other
+Beginners
+→ Chapitre sur les statistiques bayésiennes
+•Introduction àJASP etaux statistiques bayésiennes (diaporama)
+•Vidéos etrésumés d’utilisation :https ://jasp -stats .org/how -to-use -jasp/
+ Sources
+11/09/2019 Coline GRÉGOIRE, coline.gregoire@doct.uliege.be 25 Téléchargement
+https://jasp -stats.org/download/
+11/09/2019 Coline GRÉGOIRE, coline.gregoire@doct.uliege.be 26 11/09/2019 Coline GRÉGOIRE, coline.gregoire@doct.uliege.be 27 JASP et ses utilisations
+11/09/2019 Coline GRÉGOIRE, coline.gregoire@doct.uliege.be 28 Comment ouvrir un document dans JASP?
+Formats supportés:  .csv (comma separated value) sous excel et statistica
+.txt (plain text) also can be saved in Excel 
+.sav (IBM SPSS data file) 
+.ods(Open Document spreadsheet ) 
+Depuis Excel ouOpen Office Calc
+Ouvrir votre fichier dans Excel ouOpen Office Calc .
+Fichier→ Enregistrer sous .
+Dans lemenu "Format du fichier" Sélectionner "CSV (Windows) (séparateur :point -virgule)
+(.csv)
+Compléter les données nécessaires àvos analyses (noms dans la1èrecolonne ou1èreligne)
+Depuis Statistica
+Ouvrir votre fichier (.sta )dans Statistica
+Fichier→Enregistrer sous
+Compléter les données nécessaires àvos analyses (noms dans la1èrecolonne ou1èreligne)
+11/09/2019 Coline GRÉGOIRE, coline.gregoire@doct.uliege.be 29 Depuis statistica
+11/09/2019 Coline GRÉGOIRE, coline.gregoire@doct.uliege.be 30 Instant pratique
+11/09/2019 Coline GRÉGOIRE, coline.gregoire@doct.uliege.be 31 Comment faire un test -t ? Exemple
+2groupes
+24adultes jeunes
+24adultes âgés
+Score d’interférence :neutre -inhibition
+H1→ Les adultes âgés seront plus affectés par
+l’interférence phonologique que les adultes
+jeunes .
+11/09/2019 Coline GRÉGOIRE, coline.gregoire@doct.uliege.be 32 11/09/2019 Coline GRÉGOIRE, coline.gregoire@doct.uliege.be 33 Instant pratique
+11/09/2019 Coline GRÉGOIRE, coline.gregoire@doct.uliege.be 34 0,190,34Bayesian Independant T-test
+11/09/2019 Coline GRÉGOIRE, coline.gregoire@doct.uliege.be 35 Les données sont 45,44 fois plus susceptibles de 
+se produire sous H 1 que sous H 0.
+BF 10 = 45,444  Odds de 45,444:1 enfaveur de H 1
+BF 01 = 1
+45,444Odds  de  1:45,444 enfaveur de H0
+Quelle interprétation peut -on faire?
+11/09/2019 Coline GRÉGOIRE, coline.gregoire@doct.uliege.be 36 BF 10 = 45,444  Odds de 45,444:1 enfaveur de H 1
+BF 01 = 1
+45,444Odds  de  1:45,444 enfaveur de H0
+Quelle interprétation peut -on faire?
+Il est 45 fois plus probable qu’il y ait une différence pour 
+l’interférence phonologique entre âgés et  jeunes , plutôt qu’il n’y 
+en ait pas
+11/09/2019 Coline GRÉGOIRE, coline.gregoire@doct.uliege.be 37 11/09/2019 Coline GRÉGOIRE, coline.gregoire@doct.uliege.be 38 Instant pratique
+11/09/2019 Coline GRÉGOIRE, coline.gregoire@doct.uliege.be 39 Instant pratique
+Régression Linéair e
+11/09/2019 Coline GRÉGOIRE, coline.gregoire@doct.uliege.be 40 Régression Linéaire
+11/09/2019 Coline GRÉGOIRE, coline.gregoire@doct.uliege.be 41 Régression Linéaire bayésienne: Big -V
+11/09/2019 Coline GRÉGOIRE, coline.gregoire@doct.uliege.be 42 Merci pour votre attention 
+43MyORBI | PsyNCog | LinkedIn | GoogleScholar
+ coline.gregoire@doct.uliege.be
+ smajerus@uliege.be
+11/09/2019 Coline GRÉGOIRE, coline.gregoire@doct.uliege.be

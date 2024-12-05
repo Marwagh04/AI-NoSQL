@@ -1,0 +1,503 @@
+Introduction à la statistique bayésienne Anne Philippe  Université de Nantes, LMJL 2020 
+1.Modélisation bayésienne  2.Estimation  et prévision bayésienne 3.Construition des lois a priori plan du cours 
+Chapitre 1  Modélisation bayésienne  Définitions et exemples 
+Exemple  et  rappels sur le calcul des lois conditionnelles  Exemple du billard
+On lance une bille qui s’arrête à un point  uniformément distribué.   
+Question comment déterminer la valeur de  sans effectuer de mesures  ?  
+On repète la même expérience N fois de  façon indépendante et on note X le nombre de fois où elle s’arrête à gauche du point d’arrêt 
+Comment estimer  à partir de X ? θ∈[0,1]θθ
+Approche fréquentiste   
+ suit une loi binomiale  où  est un paramètre inconnu  
+La vraisemblance s’écrit   
+l’estimateur du MV est  égal à     
+Cet estimateur n’utilise pas  la 1er expérience aléatoire. Xℬ(N,θ)θV(θ,X)=(NX)θX(1−θ)N−X̂θMVN=XN
+ est une v.a. distribuée  
+la loi de   est  la loi uniforme sur [0,1]  
+la  loi binomiale   est la loi conditionnelle  de X sachant  
+Quelle est la loi de  sachant X ? θθℬ(N,θ)θθAlternative 
+Conditionnement Soit (X,Y) un couple de variables aléatoires discrètes.  la loi marginale de Y  s’écrit    La loi conditionnelle de X sachant Y  est donnée par la formule de Bayes  :  P(Y=y)=∑xP(X=x,Y=y)P(X=x|Y=y)=P(X=x,Y=y)P(Y=y) Conditionnement Soit (X,Y) un couple de variables aléatoires continues.  On note  la densité du couple (X,Y).  la loi marginale de Y admet une densité égale à   La loi conditionnelle de X sachant Y admet une densité définie par   ffY(y)=∫f(x,y)dxfX|Y(x|y)=f(x,y)fY(y)
+Formule de BAYESSoit (X,Y) un couple de variables aléatoires  La formule de Bayes est donnée par   C’est l’outil central pour calculer les lois conditionnelles. P(X∈A,Y∈B)=∫BP(X∈A|Y=y)fY(y)dysi Y est continue∑y∈BP(X∈A|Y=y)P(Y=y)si Y est discrète
+Exemple du billard (cont.)  
+On connait    et  on note  sa densité :    la loi conditionnelle  
+Formule de BAYES :     θ∼U(0,1)π(ϑ)=I[0,1](ϑ)P(X=x|θ=ϑ)=(Nx)ϑx(1−ϑ)N−xP(X=x,θ∈B)=∫BP(X=x|θ=ϑ)π(ϑ)dϑ=∫B(Nx)ϑx(1−ϑ)N−xI[0,1](ϑ)dϑP(X=x,θ∈B)=P(θ∈B|X=x)P(X=x)
+Exemple du billard (cont.)  
+La loi marginale de X est    
+En appliquant la formule  de Bayes, on obtient P(X=x)=P(X=x,θ∈[0,1])=(Nx)∫10ϑx(1−ϑ)N−xdϑ  
+c’est la loi beta de paramètres 
+(x+1 , N-x+1) 
+π
+(
+ϑ
+|
+X
+=
+x
+)
+=
+ϑ
+x
+(
+1
+−
+ϑ
+)
+N
+−
+x
+∫
+1
+0
+ϑ
+x
+(
+1
+−
+ϑ
+)
+N
+−
+x
+d
+ϑ
+P
+(
+θ
+∈
+B
+|
+X
+=
+x
+)
+=
+P
+(
+X
+=
+x
+,
+θ
+∈
+B
+)
+P
+(
+X
+=
+x
+)
+=
+∫
+B
+ϑ
+x
+(
+1
+−
+ϑ
+)
+N
+−
+x
+d
+ϑ
+∫
+1
+0
+ϑ
+x
+(
+1
+−
+ϑ
+)
+N
+−
+x
+d
+ϑ
+=
+∫
+B
+π
+(
+ϑ
+|
+X
+=
+x
+)
+d
+ϑ expériences numériques N 
+5
+10
+50
+100
+X 
+3
+5
+31
+68
+MV
+ 0.6    
+0.5
+0.62
+0.68
+Loi 
+mean 
+quantile 
+2.5% 
+quantile 
+97.5 % 
+(prior)  
+.50
+.O3
+.98
+posteriori
+N = 5
+.57
+.22
+.88
+N = 1O
+.50
+.24
+.77
+N = 50
+.62 
+.48
+.74
+N=100
+.68 
+.58
+.76ππ(.|X)Representation des lois conditionnelles  de  sachant les N observations θ
+Définition du modèle bayésien loi a priori 
+Modèle paramétrique bayésien
+On considère   une famille de lois indexées par .  On note   les observations.  
+On suppose que  est une VARIABLE ALÉATOIRE 
+la loi   est interprété comme  la loi conditionnelle de  sachant le paramètre Pnθ(⋅),θ∈ΘθX=(X1,...,Xn)θPnθ(⋅)X=(X1,...,Xn)θ
+Pnθ(⋅)=Pn(⋅|θ)
+cette loi  est construite à partir des informations disponibles sur  le paramètre  avant de collecter des données  
+L'information (dite a priori ) provient  
+d’avis d’expert  
+de résultats d’experiences précédentes dont les résultats sont supposé similaires  
+des propriétés physiques   θ
+Définition :   la loi du paramètre  est appelée  « loi a priori » θ
+Exemple du billard :  On sait que  est la position du point d’arrêt de la première boule. D’après l’expert ce point est uniformément  distribué  θ Fréquentiste  vs   Bayésien  
+ observations 
+il existe  inconnu   
+ est la loi des observations X1,...,XnθO∈ΘPnθ0(⋅)
+ observations  
+ variable aléatoire  
+ est la loi conditionnelle des observations sachant  X1,...,XnθPnθ(⋅)=P(n)(⋅|θ)θ
+Inférence estimateur    intervalle de confiance ̂θ(X1,...,Xn)P−ps−Lpθ0?
+Inférence loi a posteriori 
+Inférence 
+L’objectif est de mettre à jour la loi a priori  sur  à partir  des observations.  
+En combinant la loi a priori et la loi des observations sachant le paramètre , on peut calculer  
+La loi  jointe de    
+La loi marginale de   appelée loi prédictive a priori  
+La loi conditionnelle de  sachant  θθ(X1,...,Xn,θ)(X1,...,Xn)θ(X1,...,Xn)
+Définition :  
+la loi conditionnelle du paramètre 
+ sachant les 
+observations est appelée  « loi a posteriori » 
+θ
+calcul  de la loi a posteriori continue/continue
+La loi jointe   :  
+La loi marginale :  
+La loi a posteriori : gn(x1,...,xn,ϑ)=π(ϑ)f(n)(x1,...,xn|ϑ)mn(x1,...,xn,)=∫Θπ(ϑ)f(n)(x1,...,xn|ϑ)dϑπ(ϑ|x1,...,xn,)=π(ϑ)f(n)(x1,...,xn|ϑ)mn(x1,...,xn)
+   :  densité de la loi a priori   
+  :  densité la loi de  sachant πf(n)(x1,...,xn|θ)(X1,...,Xn)θ calcul de la loi a posteriori  :  discrète / discrète
+La loi marginale :  
+La loi a posteriori : P(n)(X1=x1,...,Xn=xn)=p∑1πiP(n)(X1=x1,...,Xn=xn|θ=θi)P(θ=θi|X1=x1,...,Xn=xn)=πiP(n)(X1=x1,...,Xn=xn|θ=θi)P(n)(X1=x1,...,Xn=xn)
+   la loi a priori   est définie par  
+  : loi de  sachant  Θ={θ1,...,θp}πi=P(θ=θi)P(n)(X1=x1,...,Xn=xn|θ)(X1,...,Xn)θ
+calcul de la loi a posteriori  :  continue/discrète
+La loi marginale :  
+La loi a posteriori : Pn(X1=x1,...,Xn=xn)=∫Θπ(ϑ)P(n)(X1=x1,...,Xn=xn|ϑ)dϑπ(ϑ|x1,...,xn,)=π(ϑ)P(n)(X1=x1,...,Xn=xn|ϑ)Pn(X1=x1,...,Xn=xn)
+   :  densité de la loi a priori   
+la loi de  sachant  est discrète π(X1,...,Xn)θ
+📝
+calcul de la loi a posteriori  :  discrète / continue
+La loi marginale :  
+La loi a posteriori : mn(x1,...,xn)=p∑1πif(n)(x1,...,xn|θi)P(θ=θi|X1,...,Xn)=πif(n)(X1,...,Xn|θi)mn(X1,...,Xn)
+   la loi a priori   est définie par  
+  :  densité la loi de  sachant  Θ={θ1,...,θp}πi=P(θ=θi)f(n)(x1,...,xn|θ)(X1,...,Xn)θ
+📝
+A partir de la loi a priori et la conditionnelle de X sachant  on connait la loi a posteriori à une constante multiplicative  près.  
+par exemple si  est une va continue on a   ou   
+Comme on cherche une loi de probabilité,  la loi a posteriori est bien définie à partir des expressions de droiteθθπ(ϑ|x1,...,xn,)∝π(ϑ)f(n)(x1,...,xn|ϑ)π(ϑ|x1,...,xn,)∝π(ϑ)P(n)(X1=x1,...,Xn=xn|ϑ)Remarque   Chapitre 2  Estimation  et prévision  bayésienne 
+Estimation bayésienne  = estimation probabiliste
+a partir du modèle bayésien,  on obtient une loi de probabilité sur le paramètre  : la loi a posteriori  
+cette loi résume l’information provenant des données  et de l’information a priori  X=(X1,...,Xn)
+Loi a posteriori
+Loi a priori
+Observations 
+Estimation par intervallecrédibilité
+intervalle de crédibilité 
+On fixe .  on cherche un intervalle   tel que  α∈]0,1/2[[l(X);u(X)]⊂ΘP(θ∈[l(X);u(X)]|X)=1−α
+Interprétation : Ayant observé X, l’intervalle contient le paramètre  avec une probabilité   
+exemple :  θ1−αl(X)=q(α/2,X)etu(X)=q(1−α/2,X)où  quantile d’ordre  de la loi a posteriori q(α,X)α intervalles de crédibilité 
+Il n’y a pas unicité des lss’intervalle,  
+ tous les  intervalles de la forme suivante sont des intervalles de crédibilité    avec [q(β,X);q(1−α+β,X)]0≤β≤α
+On cherche le plus court intervalle :  on cherche la valeur de  qui minimise la longueur  βq(1−α+β,X)−q(β,X)
+défauts des IC
+  vérifie   est une région de niveau   plus courte que IC optimal [a,b]⊂[l(X),u(X)]P(θ∈[a,b]|X1,...,Xn)≈0⇒[l(X),a]∪[b,u(X)]1−α2.La généralisation en dimension supérieure est difficile 1. Soit   le plus court  intervalle de crédibilité de niveau [l(X),u(X)]1−α
+Région Highest Posterior Density (HPD)
+On cherche la plus petite région   telle que   
+ces régions sont de la forme         
+On choisit  la  valeur    telle que   H⊂ΘP(θ∈H|X1,...,Xn)=1−αH(K)={θ:π(θ|X1,...,Xn)>K}K:=K1−α(X)P(θ∈H(K1−α(X))|X1,...,Xn)=1−α
+La région  
+est appelé région HPD de niveau 
+{
+θ
+:
+π
+(
+θ
+|
+X
+1
+,
+.
+.
+.
+,
+X
+n
+)
+>
+K
+1
+−
+α
+(
+X
+)
+}
+1
+−
+α
+Propriétés 
+la définition est indépendante de la dimension de  
+En dimension 1 si la distribution est unimodale alors la région HPD est un intervalle qui coincide avec le plus court intervalle de crédibilité 
+la définition se généralise aux lois discrètes en prenant  ΘH(K)={ϑ:P(θ=ϑ|X1,...,Xn)>K} Exemple
+On modélise   le nombre de pannes par une loi de poisson de paramètre  > 0  
+La loi priori est la loi  exponentielle de paramètre 1 
+Calcul de la loi a posteriori  
+ 
+ 
+ 
+On observe  
+loi uniondale : IC et HPD coïncident X1,...,XnθP(X1=x1,...,Xnxn|ϑ)=e−nϑϑ∑xi1x1!...xn!π(ϑ|)∝e−ϑIϑ>0π(ϑ|x1,...,xn)∝e−(n+1)ϑϑ∑xiIϑ>0n=10 et ∑Xi=20loi gamma (21,11) 
+📝
+(1) on  calcule et represente la longueur en fonction de   (2) on détermine la valeur de  qui minimise la longueur  (3) on en déduit le plus court intervalle de crédibilité qui coïncide avec la région HPDββ
+En utilisant R  
+qgamma  quantile de la loi gamma 
+which.min recherche du min
+lien avec les intervalles de confiance. 
+un intervalle de confiance de niveau  est une intervalle aléatoire     [a(X) , b(X)] tel que,  pour tout  :        % des intervalles de confiance contiennent la vraie valeur du paramètre  
+un intervalle de crédibilité de niveau  est une intervalle  [l(X) u(X)] tel que   Ayant observé X,  le paramètre appartient à l’intervalle avec une probabilité 1−αθPθ([a(X),b(X)]∋θ)=1−α1−α1−αP(θ∈[l(x),u(X)]|X)=1−α1−α
+Probabilité fréquentiste d’un intervalle de crédibilité
+Soit [l(X) u(X)]  un intervalle de crédibilité de niveau   
+Pour le modèle , sa probabilité fréquentiste est égale à  
+  En général     1−α{Pθ,θ∈Θ}Pθ([l(X),u(X)]∋θ)=β(θ,n)
+β(θ,n)≠1−α Exemple  : le  modèle exponentiel  -conditionnellement à ,   iid suivant une loi exponentielle  > 0  - La loi priori est la gamma de paramètre (a,b)  1.La loi a posteriori  est la loi gamma  2.Pour tout  : est un intervalle de crédibilité de niveau  θX1,...,Xnθ(a+n,b+∑Xi)β∈(0,α)[gn+a(β)b+∑Xi;gn+a(1−α+β)b+∑Xi]1−α
+📝
+Notation :  
+ est le quantile d’ordre 
+   et 
+ la 
+fonction de répartition de la loi gamma (a, 1)  
+g
+a
+(
+β
+)
+β
+G
+a
+le niveau fréquentiste est   
+A n fixé, quand a-> 0 et b-> 0 alors le niveau fréquentiste converge vers  
+Approximation de la loi  gamma  
+Quand , on a    
+Si   avec x≠0  alors  quand  
+A (a,b) fixés,  le niveau fréquentiste converge vers  quand .   L’intervalle de crédibilité de niveau  est un intervalle de confiance asymptotiquement de niveau  β(n,θ)=Gn(gn+a(1−α+β)−bθ)−Gn(gn+a(β)−bθ)1−αn→∞gn(β)∼qβn+nxn∼nx+nGn(xn)∼Φ(x)n→∞1−αn→∞1−α1−α
+Notation :  
+ est le quantile 
+d’ordre 
+   et 
+ la fonction de 
+répartition de la loi gaussienne 
+N(0,1) 
+q
+β
+β
+Φ
+📝
+Crédibilité d’une hypothèse 
+On considère le test statistique                         
+On suppose que  pour i=1,2 
+Règle de décision Bayésienne :  
+On calcule les probabilités a posteriori  des hypothèses :   pour i=1,2 
+On dit que  est plus crédible que  si    
+La valeur de la probabilité a posteriori quantifie la crédibilité de l’hypothèse. H0:θ∈Θ0contre H1:θ∈Θ1P(θ∈Θi)≠0P(θ∈Θi|X)H0H1P(θ∈Θ0|X)≥P(θ∈Θ1|X)
+Exemple : modèle exponentiel (cont.) 
+La loi a posteriori est la loi  gamma  
+On prend  a=b= 1  
+On veut tester  contre   
+On évalue la pobabilitité a posteriori de l’hypothèse nulle, c’est à dire                         ( = 83 %) (n+a,b+∑Xi)θ≤1θ>1P(θ≤1|X)=Gn+a(b+∑Xi)
+ Prévision Bayésienne Prévision en loi
+Loi prédictive 
+ Objectif : on veut prévoir    à partir des observations passées  dans le modèle bayesien Xn+1(X1,...,Xn)
+Loi a priori 
+Loi conditionnelle 
+des observations 
+sachant le paramètre 
+Loi a posteriori 
+Loi 
+prédictive  
+Définition : la loi prédictive est la loi 
+conditionnelle de 
+ sachant  
+X
+n
++
+1
+(
+X
+1
+,
+.
+.
+.
+,
+X
+n
+)
+.
+Calcul de la loi prédictive 
+La loi prédictive s’écrit :   
+Où   est la densité de la  loi conditionnelle de   sachant  et le passé  :   p(xn+1|x1,...,xn)=∫Θp(xn+1|ϑ,x1,...,xn,)π(ϑ|x1,...,xn)dθ continue ∑ϑ∈Θp(xn+1|ϑ,x1,...,xn,)P(θ=ϑ|x1,...,xn) discrète p(xn+1|ϑ,x1,...,xn)Xn+1θX1,...,Xnp(xn+1|ϑ,x1,...,xn)=f(x1,...,xn+1|ϑ)f(x1,...,xn|ϑ)
+La loi prédictive est un mélange de loi.  
+📝
+A partir de la loi prédictive on construit  1. Un intervalle de prévision de niveau , c’est un intervalle  tel que  2. Un prédicteur ponctuel : Pour l’erreur , la meilleure approximation de  par une fonction de  est l’espérance conditionnelle  1−α[P1;P2]P(Xn+1∈[P1;P2]|X1,...,Xn)=1−αL2Xn+1X1,...,Xn̂Xn+1=E(Xn+1|X1,...,Xn) Exemple : observations iid suivant  f(⋅|θ)
+L’indépendance conditionnellement à  implique que   
+D’ou la loi prédictive  
+Le prédicateur ponctuel est  θp(xn+1|ϑ,x1,...,xn)=f(xn+1|ϑ)p(xn+1|x1,...,xn)=∫Θf(xn+1|ϑ)π(ϑ|x1,...,xn)dϑ̂Xn+1=∫ΘE(Xn+1|ϑ)π(ϑ|X1,...,Xn)dϑ
+📝
+Exemple : regression linéaire suivant  X=θt+ϵϵ iid N(0,σ2)
+L’indépendance conditionnellement à  implique que     c’est la densité de la loi gaussienne  de moyenne  et de variance    
+D’ou la loi prédictive 
+ 
+Le prédicteur ponctuel est égal à  θp(xn+1|ϑ,x1,...,xn)=f(xn+1|ϑ)θtn+1σ2p(xn+1|x1,...,xn)=∫Θ×R+12πσe12σ2(xn+1−θtn+1)2π(σ2,ϑ|x1,...,xn)dϑdσ2̂Xn+1=E(θ|X1,...,Xn)tn+1
+📝
+Estimateurs de Bayes Construction d’estimateurs à partir de la loi a posteriori
+Estimateurs de Bayes 
+Soit  L une fonction de coût :  elle permet évaluer la qualité d’un estimateur    Exemple :   plus généralement c’est une fonction  positive  L:  telle que   
+Le risque bayesien d’un estimateur  est  δ:=δ(X) du paramètre θL2(δ,θ)=(δ−θ)2 coût/erreur quadratique L2L1(δ,θ)=|δ−θ| coût/erreur absolue L1Θ×Θ→R+L(δ;θ)=0⇔δ=θδ du paramètre θr(δ,π)=E(L(δ(X),θ))=∫L(δ(x),ϑ)gn(x,ϑ)dx1...dxndϑ=∫L(δ(x),ϑ)π(ϑ|x)dϑmn(x1,...,xn)dx1...dxn
+Définition : Un estimateur  est un estimateur de Bayes sous coût L, s’il minimise le risque bayesien  c’est à dire  pour estimateur δπr(δπ,π)≤r(δ,π)δ Construction des estimateurs de Bayes 
+On définit    
+Théorème :   est un estimateur de Bayes  
+Cas particulier  
+Coût quadratique :  l’estimateur de Bayes est l’espérance de la loi a posteriori        
+Coût absolue : l’estimateur de Bayes est la médiane  de la loi a posterioriρ(δ)=∫ΘL(δ,ϑ)π(ϑ|X1,...Xn)dϑδπ(X)=argminδρ(δ)δπ(X)=E(θ|X1,...Xn)
+📝
+📝
+Propriétés asymptotiques —
+Contexte 
+on suppose que le modèle  est régulier  
+Sous ces hypothèse :  l’estimateur du maximum de vraisemblance converge presque surement et   est asymptotiquement efficace  
+On suppose que les observations sont iid suivant  où  appartient à l’intérieur de  
+Théorème  1  si  sont deux lois a priori telles que   alors pour tout  :  {Pnθ=Pn(⋅|θ)θ∈Θ}θMVnθMVnfθ0θ0Θπ1,π2πi(θ)>0,∀θ∈ΘA⊂Θ∫A|π1(ϑ|X)−π2(ϑ|X)|dϑp.s.n→∞0
+Théorème 2 Si  est une loi a  priori telle que   et  est  sur  alors  1) Pour tout intervalle ouvert  U contenant      on a  2)  3) ππ(θ)>0,∀θ∈ΘπC1Θθ0P(θ∈U|X)psn→∞1E(θ|X)Pn→∞θ0Var(θ|X)Pn→∞0 Théorème 3 Si  est une loi a  priori telle que   et  est  sur  alors  1) On peut approcher la loi a posteriori par la loi gaussienne de moyenne  et de variance  2) On peut approcher la loi a posteriori par la loi gaussienne de moyenne  et de variance   où I est l’information de Fisher apportée par une observation  3) On a ππ(θ)>0,∀θ∈ΘπC2ΘE(θ|X)Var(θ|X)θMVnn−1I−1(θMVn)n(E(θ|X)−θMVn)n→∞P0
+Conséquence du théorème 3  1) l’estimateur de Bayes sous coût quadratique  c’est à dire   est asymptotiquement efficace  4) Le niveau fréquentiste des intervalles de crédibilité de niveau  converge vers  δπ(X)=E(θ|X1,...Xn)1−α1−αβ(θ,n)n→∞1−αOn applique le théorème de SLutski   Le premier terme converge vers 0 en proba et le confond en loi vers n(E(θ|X)−θ0)=n(E(θ|X)−θMVn)+n(θMVn−θ0)N(0,I−1(θ0))
+Chapitre 3   Loi a priori  
+Lois informatives   Loi discrète  
+On suppose que  le paramètre appartient à un ensemble fini  avec les  probabilités   c’est à dire   
+Source d’information :  
+les résultats d’études précédentes supposées similaires  
+les avis de p experts et la proba représente la confiance accordée à chaque expert. Θ={θ1,...,θp}π1,...,πpP(θ=θi)=πi
+La loi a posteriori est aussi une loi discrète à valeurs dans    
+Pour tout i=1…p,  on a   
+Si   avec    alors la loi a posteriori ne se concentre pas autour de la vraie valeur c’est à dire  il existe  un intervalle U  tel que   et  ΘP(θ=θi|X)=fn(X|θi)πi∑pj=1πjfn(X|θj)X∼Pθ0P(θ=θ0)=0θ0∈UP(θ∈U|X)↛1
+ la loi a priori est uniforme sur {0, 1/2, 1 ,3/2, 2}  
+ les observations sont simulées suivant la loi exponentielle de paramètre 0.75  
+Illustration 
+On représente la loi a posteriori en fonction de n pour 3 échantillons.    Evolution des probabilités  a posteriori en fonction de n 
+les observations sont simulées suivant la loi exponentielle de paramètre 1  
+On a    
+On observe que     P(θ=1)=1/5P(θ=1|X)→1Illustration (cont.) Evolution des probabilités  a posteriori en fonction de n 
+ Histogramme
+On relaxe le contrainte de finitude de  en prenant comme support un intervalle  
+On ordonne les valeurs    
+on ajoute une borne inférieure :       
+On construit l’histogramme    
+Cette loi  vérifie  
+ pour tout  Θ={θ1,...,θp}θi,i=1,...,pθ0<θ1<θ2<⋯<θpπ(θ)=p∑i=1πiθi−θi−11[θi−1,θi[(θ)P(θ∈[θi−1,θi[)=πiπ(θ)>0θ∈[θ0;θp[
+La loi a posteriori s’écrit   D’où  π(θ|X1,...Xn)∝p∑i=1πiθi−θi−1f(X1,...Xn|θ)1[θi−1,θi[(θ)π(θ|X1,...Xn)=∑pi=1πiθi−θi−1f(X1,...Xn|θ)1[θi−1,θi[(θ)∑pi=1πiθi−θi−1∫θiθi−1f(X1,...Xn|θ)dθ
+Illustration (cont.) 
+les observations sont simulées suivant la loi exponentielle de paramètre .75.  
+A priori uniforme
+A priori non uniforme
+Famille de lois conjuguées 
+On considère   une famille paramétrique de lois sur . 
+Définition  On dit que  est une famille conjuguée avec  si la loi a priori appartient à  alors la loi a posteriori appartient aussi à .  Autrement dit  𝒫={πλ,λ∈Λ}Θ𝒫ℱ={fn(⋅|θ),θ∈Θ}𝒫𝒫∀λ∈Λ si θ∼πλ alors ∃λ(X)∈Λtel que π(θ|X)=πλ(X)(θ) Exemple de Famille de lois conjuguées 
+ est la famille des lois exponentielles   
+La famille des lois Gamma est une famille de lois conjuguées :   a> 0 et b> 0.  On a   
+ est la famille des lois uniformes sur   avec  
+La famille des lois de pareto est une famille de lois conjuguées :    avec a> et b>0.   On a  ℱf(x1,...,xn|θ)=θne−θn¯Xnπ(θ)=ba1Γ(a)e−bθθa−11θ>0λ=(a,b)⟶λ(X)=(n+a,b+n¯Xn)ℱ[0,θ]f(x1,...,xn|θ)=1θn1Mn≤θMn=max(X,...,Xn)π(θ)=abaθa+11θ>bλ=(a,b)⟶λ(X)=(n+a,max(b,Mn))
+📝
+📝
+on fixe la valeur de  à partir de l’information disponible a  priori  
+Exemple 1. Information a priori :  est autour de 1 
+On choisit  tel que .  En fonction de la dimension de  on pourra aussi  ajouter une contrainte sur la variance  de  qui traduit la confiance accordée à l’information 
+Exemple 2. Information a priori :     (avec une forte probabilité) 
+On fixe  tel que  ou 80%, 99% …  en fonction de la confiance accordée à l’information λθλE(θ)=∫ϑπλ(ϑ)dϑ=1Λθθ∈AλP(θ∈A)=∫Aπλ(ϑ)dϑ=95%Choix de l’hyperparamètre λ
+Mélange d’experts a priori  
+Proposition : Soit    une  famille de lois conjuguées,  la famille des mélanges de lois de    forme aussi une famille de lois conjuguées   Rappel  : un mélange s’écrit   avec     ,  et   
+Application : on peut prendre en compte différentes sources d’information et accorder des poids différents en fonction de la fiabilité des sources 𝒫={πλ,λ∈Λ}𝒫k∑j=1pjπλj(θ)(λ1,...,λk)∈Λk(p1,...,pk)∈[0,1]kk∑j=1pj=1
+Illustration  : modèle exponentielExpert 1 :    A priori  A posteriori θ=1±.5ab=1ab2=.52Γ(4,4)Γ(n+4,n¯Xn+4)Expert 2 :    A priori  A posteriori θ=2±.5ab=2ab2=.52Γ(16,8)Γ(n+16,n¯Xn+8)
+A priori A posteriori n= 10Mélange  1/2 -1/2 Lois non informatives  
+Loi a priori impropre
+On considère    telle que  
+ ne définit pas une loi de probabilité sur  
+Définition  on dit que  est une loi impropre pour le modèle  si   
+Si  est une loi impropre alors la loi a posteriori est bien définie par  π:Θ↦R+{∑ϑ∈Θπ(ϑ)=∞ discrète ∫Θπ(ϑ)dϑ=∞ continue πΘπ:Θ↦R+ℱ={fn(⋅|θ),θ∈Θ}∫Θπ(θ)fn(x1,...xn|θ)dθ<∞presque surement.ππ(θ|X)=π(θ)fn(X|θ)∫Θπ(ϑ)fn(X|ϑ)dϑ
+Si 
+ est une loi impropre alors pour tout C>0,   
+ est aussi une loi impropre. 
+A partir de ces  deux lois impropres, on obtient la même loi a posteriori
+π
+ν
+(
+θ
+)
+=
+C
+π
+(
+θ
+)
+Exemple : modèle exponentiel
+On considère     
+on a    
+La fonction   définit donc une loi impropre si  et seulement n>1  
+Pour n> 1,  la loi a posteriori est la loi gamma   π(θ)=1R+(θ)∫R+π(ϑ)dϑ=∞∫Θπ(ϑ)fn(x1,...xn|ϑ)dϑ=∫R+ϑne−ϑn¯Xndϑ<∞⇔(n>1 et ¯Xn>0).πΓ(n+1,n¯Xn)
+Loi a priori de Laplace 
+Si  est un ensemble fini ou de mesure de Lebesgue finie () alors la loi  a priori de Laplace est la loi uniforme sur   
+Si   ou      alors la loi a priori de Laplace est une loi impropre définie par   .  
+Proposition : Si  la loi a priori de Laplace existe  alors la loi a posteriori vérifie  Θ∫Θdϑ<∞Θ{Θ infini dénombrable ∑ϑ∈Θfn(X|ϑ)<∞ ∫Θdϑ=∞ ∫Θfn(X|ϑ)dϑ<∞ π(θ)∝1Θ(θ)π(θ|X)∝fn(X|θ) Loi Non informative de Jeffreys
+On suppose que le modèle  est régulier  
+Soit  l’information de Fisher  et son déterminant  
+Si     ou   si   et   alors la loi de Jeffreys est définie par  ℱ={fn(⋅|θ),θ∈Θ}In|In|∫Θ|In(ϑ)|dϑ<∞∫Θ|In(ϑ)|)dϑ=∞∫Θ|In(ϑ)|fn(X|ϑ)dϑ<∞π(ϑ)∝|In(ϑ)|
+Loi Non informative de Jeffreys
+La loi de Jeffreys favorise les régions où l’information de Fisher prend des grandes valeurs c’est à dire les régions où les données apportent plus d’information sur le paramètre  
+La loi de Jeffreys est invariante par reparamétrisation  
+Exemple : modèle exponentiel 
+On considère  n variables aléatoires iid suivant la loi exponentielle  
+L’information de Fisher est donnée par    
+ et  ps car n>0 et  ps  
+La loi de Jeffreys est une loi impropre définie   
+La loi a posteriori est la loi gamma nθ2∫∞O1ϑdϑ=∞∫∞Oϑn−1e−nθ¯Xndϑ<∞¯Xn>0π(θ)∝1θ1R+(θ)Γ(n,n¯Xn)
+📝

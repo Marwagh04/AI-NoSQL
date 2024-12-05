@@ -1,0 +1,273 @@
+PARENT – EUSTACHE   Page 1 / 9 Université Claude Bernard  Lyon 1  Olivier PARENT  
+Julien  EUSTACHE  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Les Réseaux Bayésiens  
+A la recherche de la vérité  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Master 2 Recherche Connaissance et Raisonnement, 2006 – 2007  
+Cours Cognition et connaissance  - Alain MILLE PARENT – EUSTACHE   Page 2 / 9 Université Claude Bernard  Lyon 1  TABLE DES MATIERES  
+ 
+ 
+ 
+Table des matières  ................................ ................................ ....................  2 
+Introduction ................................ ................................ ...............................  3 
+Réseau bayésien   ................................ ................................ .......................  4 
+Inférence bayésienne  ................................ ................................ ................  6 
+Conclusion  ................................ ................................ ................................ . 8 
+Référence s ................................ ................................ ................................ . 9 
+  PARENT – EUSTACHE   Page 3 / 9 Université Claude Bernard  Lyon 1  Les r éseaux bayési ens s’ appui ent  sur  un t héor èm e  : Le théorème de Bayes. C’ est  un résultat de 
+base en théorie des probabilités, issu des travaux du révérend Thomas Bayes (1702 -1761), présenté 
+à titre posthume en 1763. Voici ces résultats  : 
+ 
+ 
+ 
+ 
+Le terme P(A) est la probabilité a priori  de A. Elle est «  antérieure  » au sens qu’ el l e pr écède t out e 
+information sur B. P(A) est aussi appelée la probabilité marginale  de A. Le terme P(A|B) est appelée la 
+probabilité a posteriori  de A sachant B (ou encore de A sachant B ). Elle est «  postérieure  », au  sens 
+qu’ el l e dépend di r ect em ent  de B. Le terme P(B|A), pour un B connu, est appelée la fonction de 
+vraisemblance  de A. De même, le terme P(B) est appelé la probabilité marginale  ou a priori  de B. 
+Cependant ,  cer t ai ns consi dèr ent  qu’ i l  n' y a pas t ouj our s de  rapprochement entre un modèle de type 
+"réseau bayésien" et la "statistique bayésienne". Le terme diagramme d'influence , plus général et dénué 
+de connotation est donc parfois préféré à réseau bayésien.  
+  PARENT – EUSTACHE   Page 4 / 9 Université Claude Bernard  Lyon 1   RESEAU BAYESIEN  
+ 
+ 
+ Définition  
+ 
+Un réseau bayésien est un système représentant la connaissance et permettant de calculer des 
+probabilités conditionnelles apportant des solutions à différentes sortes de problématiques.  
+ 
+La structure de ce type de réseau est simple  : un graphe  dans lequel les nœ uds  représent ent des 
+variables aléatoires, et les arcs (le graphe est donc orienté)  reliant ces dernières sont rattachées à des 
+probabilités conditionnelles.  
+Notons que le graphe est acyclique  : il ne contient pas de boucle. Les arcs représentent des relations 
+entre v ariables qui sont soit déterministes, soit probabilistes.  
+Ainsi, l'observation d'une ou plusieurs causes n'entraîne pas systématiquement l'effet ou les effets qui 
+en dépendent, mais modifie seulement la probabilité de les observer.  
+ 
+L'intérêt particulier d es réseaux bayésiens est de tenir compte simultanément de connaissances 
+a priori d'experts (dans le graphe) et de l'expérience contenue dans les données.  
+Dom ai nes d’ ut i l i sat i on pr i nci paux  : diagnostic (médical et industriel), analyse de risques, détection de 
+spams , datamining , détection de fraudes, exploitation du retour d'expérience, modélisation et 
+si m ul at i on de syst èm es com pl exes,  dét ect i on d’  i nt r usi ons,  Text M i ni ng,  anal yse de Bi oPuces,  anal yse de 
+trajectoires de santé.  
+ 
+Pour  r ésum er ,  un r éseau bayési en est  un m odèl e pr obabi l i st e gr aphi que per m et t ant  d’ acquér i r ,  
+de capi t al i ser  et  d’ expl oi t er  des connaissances , né du besoin de créer des systèmes experts à base de 
+probabilités.  
+ 
+ Const r uct i on d’ un gr aphe  
+Construire un réseau bayésien c'est donc  : 
+- Définir le graphe du modèle  
+- Définir les tables de probabilités de chaque variable, conditionnellement à ses causes.  
+Le graphe est aussi appelé la "structure" du modèle, et les tables de probabilités ses "paramètres". 
+Généralement, la structure est définie par des experts et les tables de probabilités calculées à partir de 
+données expérimentales.  Il est possi bl e d’ ut i l i ser  des al gor i t hm es t el s que K2,  l e r ecui t  si m ul é ou encor e 
+certains algorithmes génétiques pour construire le réseau.  
+ 
+ 
+ Espace de recherche  
+ 
+L’ espace de r echer che est  r el at i f  aux nom br e de var i abl es bi en sûr ,  m ai s aussi  au nom br e d’ ar c s 
+et de valeurs. Au pire des cas, cet espace peut mesure r 2nb variables, lorsque  toutes  les variables sont  PARENT – EUSTACHE   Page 5 / 9 Université Claude Bernard  Lyon 1  
+binaires.  De plus, il augmente si les variables ont de multiples valeurs (exemple  : une variable fumeur 
+peut avoir en valeurs  : non, léger, gros).  
+Cependant,  cela signifie que toutes les variables sont dépendantes les unes des autres. Or, 
+couramment, les variables ne sont pas dépendantes de toutes les autres, ce qui réduit 
+consi dér abl em ent  l a t ai l l e de l ’ espace de r echer che.   
+ 
+ 
+ Tables de probabilités  
+Les tables de probabilités sont définies par des statistiques relatives au problème à résoudre  
+(peuvent aussi être déterminées par des experts) . 
+Chacune des var i abl es di spose d’ une t abl e de pr obabi l i t és condi t i onnel l es r el at i ves aux var i abl es 
+causales dont  elle dépend.  Par exemple (cf. présentation ppt  ci-jointe ) ,  l ’ al ar m e peut  se décl encher  soi t  à 
+cause d’ un cam br i ol age,  soi t  à cause d’ un séi sm e.  Les pr obabi l i t és condi t i onnel l es al ar m e sachant  
+cambriolage ou/et séisme sont déduites en fonction des probabil ités que tel ou tel évènement 
+survienne . 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Lor squ’ une var i abl e possède pl usi eur s val eur s,  pour  chacune d’ el l es  est calculé les probabilités 
+conditionnelles en fonction des événements causaux.   PARENT – EUSTACHE   Page 6 / 9 Université Claude Bernard  Lyon 1  INFERENCE BAYE SIENNE  
+ 
+ 
+ L'inférence  bayésienne est basée sur l'utilisation d'énoncés probabilistes, qui dans le cas général 
+sont trouvé s par des experts étudiant un système qui leurs ait connu. Ces énoncés doivent être clairs et 
+précis afin d'éviter toute confusion dans les relations de dép endance qui en découleront. L' inférence  
+bayésienne est particulièrement  utile dans les problèmes d'induction, car se basant sur des cas 
+particuliers  et n'a de validité qu'en terme  probabiliste . Les méthodes bayésiennes se distinguent des 
+méthodes dites sta ndard par l'application systématique de règles formelles de transformation des 
+probabilités. On cherche à induire sur un système bayésien aussi bien par le haut que par le bas, aussi 
+bien les conséquences  que les causes, du graphe de dépendance . 
+Les règles  de la logique des probabilités utilisées sont les suivantes:  
+La règle d'addition 
+  
+La règle de multiplication   
+  
+Le théorème de Bayes peut être dérivé simplement en mettant à profit la symétrie de la règle de 
+multiplication  
+ 
+Le théorème de Bayes permet d'inverser les probabilités. C'est -à-dire que si l'on connaît les 
+conséquences d'une cause, l'observation des effets permet de remonter aux causes, c'est l'effet 
+d'induction « bottom -up ». Sachant aussi qu'une lecture littéral  du théorème  de Bayes permet une 
+induction « top-down  », c'est à dire à partir des causes en déduire les conséquences . Mais il existe aussi 
+un t r oi si èm e t ype d’ i nduct i on di t  «  explaining away  » ou comment réfuter une cause en en constant une 
+autre, autrement  di t  par t i r  d’ une conséquence pour  r em ont er  au x cause s, constater la quelle est vrai et 
+réfuter les conséquences sous jacentes des autres causes.  
+ En rés umé pour induire sur un réseau bayé sien, il faut en premier lieu trouver les probabilité s 
+conditionnel les de chaque va riable aléatoire avec les quelles elles sont directement dépendante s. Ce que 
+les experts font à partir des statistiques étudiées  sur le système voulu. P uis partir de faits produits 
+auxquel s on appliquera une probabilité de 1 ou 0 sur le résea u bayésien  suivant qu'ils identifient une 
+variable à vrai ou faux dan s celui ci. Et enfin par le biais  de calcul respectant la règle d'addition et ou de 
+multiplication  précédemment  décrite , on modifie les probabilités causal es et ou conséquente s. La 
+nouvelle probabilité obtenue  est l'induction que l 'on peut faire sur un réseau bayé sien.  
+ 
+ Algorithme s employé s 
+ 
+Les réseaux bayésiens ont été développés au début des années 1980 pour tenter de résoudre 
+certains problèmes de prédiction et d'abduction, courants en intelligence artificielle (IA). Dans ce type de 
+tâche, il est nécessaire de trouve r une interprétation cohérente des observations avec les données  PARENT – EUSTACHE   Page 7 / 9 Université Claude Bernard  Lyon 1  connues a priori . L'inférence probabiliste signifie donc le calcul de P(Y|X)  où X est un ensemble 
+d'observations et Y un ensemble de variables décrivant le problème et qui sont jugées importa ntes pour 
+la prédiction ou le diagnostic.  
+Le cal cul  d’ i nf ér ence pr obabi l i st e étant  en général NP -difficile , deux types de méthodes ont été 
+développés ,  i l  y a l es appr oches com pl èt e et  appr oxi m at i ve.  O n a const at é qu’ i l  exi st ai t  une classe de 
+réseaux pour lesquels le calcul est réalisable  : les polyarbres (Pour tous nœ ud x du graphe, x d -sépare ses 
+voi si ns,  et  l e f ai t  qu’ un nœ ud x d -sépar é deux aut r es nœ uds y et  z i m pl i que que y et  z sont  i ndépendant  
+si x est connu, voir notion de dépendance et de d -séparation ). C’ est  pour quoi  l es m ét hodes exact es  vont  
+se r appr ocher  d’ un pol yar br e  pour inférer sur le réseau.  
+ 
+ 
+ Les méthodes complète s 
+ 
+Les premiers algorithmes d'inférence pour les réseaux bayésiens sont basés sur une architecture 
+à passage de messages et ils étaient limités aux arbres. Dans cette technique, à chaque nœ ud  est associé 
+un processeur qui peut envoyer des messages de façon asynchrone à ses voisins jusqu'à ce qu'un 
+équilibre soit atteint, en un nombre fi ni d'étapes. Cette méthode a été depuis étendue aux réseaux 
+quelconques pour donner l'algorithme de l ’ ar br e de j onct i on ( J T) . Cet t e al gor i t hm e s’ appl i que en 4 
+étapes de transformation du graphe: Moralisation , Absorbé les faits mesuré , Triangulation, Constr uire 
+l’Arbre de Jonction . Et  une ét ape d’ i nduct i on  : Transmettre les messages pour réaliser la cohérence . Le 
+coût de  l’ al gor i t hm e JT est déterminé par la taille de la plus grande clique et est exponentiel en espace, 
+pour les graphes densément connectés l ’ i nf ér ence peut  êt r e i m pr at i cabl e.  
+ 
+Une autre méthode s'appelle le cut-set conditionning : elle consiste à instancier un certain 
+nombre de variables de manière à ce que le graphe restant forme un arbre. On procède à une 
+propagation par messages sur cet ar bre. Puis une nouvelle instanciation est choisie. On réitère ce 
+processus jusqu'à ce que toutes les instanciations possibles aient été utilisées. On fait alors la moyenne 
+des résultats. L’ avant age de cet t e m ét hode est  une com pl exi t é en t em ps l i néai r e sur  l a taille du réseau, 
+mais le calcul des probabilités conditionnelles est en général impraticable pour les réseaux assez grands 
+car ayant une complexité dans le pire des cas exponentielle dans le nombre de variabl es et aussi à cause 
+du problème  des boucles d ans le réseau.  
+ 
+ Les méthodes approximative s 
+ 
+Il existe trois approche s pour réaliser des inférence approché es, faire comme si le graphe était 
+un arbre  : « loopy belief propagation  », Markov chain Monte Carlo ( e.g  . échantillonnage de Gibbs), 
+Inférence variationnelle.  
+ 
+Markov ch ain Monte Carlo exploite  la topologie du réseau et effectu e un échantillonnage de 
+Gibbs sur des sous -ensembles locaux de variables de façon séquentielle et concurrente . 
+ 
+ L’ i nf ér ence var i at i onnel l e est  une m ét hode de pl us en pl us utilisée, elle est une sorte 
+d’ adapt at i on de l ’ al gor i t hm e EM  (Expectation -Maximization).  
+  PARENT – EUSTACHE   Page 8 / 9 Université Claude Bernard  Lyon 1   
+ 
+ 
+ Q uel ques out i l s…  
+ 
+- Matlab  : http://www.mathworks.fr/  
+- Association for Uncertainty in Artificial Intelligence  : http://www.auai.org/  
+- Bayesia  : http://www.bayesia.fr   
+- Hugin  : http://www .hugin.com   
+- Netica  : http://www.norsys.com   
+- Elvira: http://leo.ugr.es/~elvira  
+ 
+ 
+ 
+Les réseaux bayésiens sont donc  un outil de choix dans la représentation de connaissances et  
+dans l ’ expl oi t at i on de cel l es -ci .  N ous l ’ avons vu,  beaucoup de dom ai nes sont  i nt ér essés par  ce t ype de 
+représentation . Com m e on a pu l e voi r ,  l ’ i nf ér ence sur  l es r éseaux bayési ens est  un pr obl è me NP -
+di f f i ci l e,  c’ est  pour quoi  i l  ét ai t  convenabl e de l e voi r  de f açon com pl èt e pour  des i nst ances r éal i sabl e s et 
+incomplète dans les autres cas.  
+ 
+Après cette approche statique, pour aller plus loin, il pourrait être  intéressant de se pencher sur  
+les ré seaux bayésiens dynamiques . Ceux ci  sont une répétition du réseau classique dans lesquels on 
+r aj out e un l i en causal  d’ un pas de t em ps à l ’ aut r e.  I l s cont i ennent  chacun un cer t ai n nom br e de var i abl es 
+aléatoires représentant les observations et les états cac hés du processus. Le temps ici est discret et 
+chaque uni t é de t em ps r epr ésent e une nouvel l e obser vat i on,  l ’ uni t é de t em ps n’ a donc pas t ouj ou rs la 
+même valeur en temps réel, la complexité inférencielle des réseaux bayésien s dynamiques est 
+évidement bien pl us élevée que celle vu précédemment.   
+ 
+Enfin, o n r et r ouve l es r éseaux bayési ens dans beaucoup d’ appl i cat i ons,  sans m êm e l e savoi r .  
+Microsoft par exemple est un fervent utilisateur de cette structure (Answer Wizard, assistant Office par 
+exemple) , mais aussi  Google et Mozilla via leurs filtres anti -spam . De nombreux travaux dans le domaine 
+sont  r éal i sés,  pr euve de l ’ i nt ér êt  por t é par  l a com m unaut é sci ent i f i que,  et  de l a pui ssance de ces 
+réseaux.  
+ 
+ 
+ 
+  PARENT – EUSTACHE   Page 9 / 9 Université Claude Bernard  Lyon 1  REFERENCES  
+ 
+ Bibliographie  
+ 
+- « Automated filtering of network intrusion detection alarms. », Faour, A., Leray, P., and Eter, 
+B. (2006).  
+- « Multi -agent causal models for dependability analysis. », Maes, S. and Leray, P. (2006).  
+- « Apprentissage de structure dans les réseaux bayésiens et données incomplètes.  », 
+Francois, O. and Leray, P. (2005).  
+- « Détection et localisation de dysfonctionnement par réseaux bayésiens - applications à un 
+réacteur tubulaire.  », Buvat, J., Leray, P., Estel, L., Mouhab, N., and Cosmao, J. (2005).  
+- « Réseaux bayésiens.  », Naïm, P., Wuille min, P. -H., Leray, P., Pourret, O., and Becker, A. 
+(2004).  
+- « Etude comparative d'algorithmes d'apprentissage de structure dans les réseaux 
+bayésiens  », Francois, O. and Leray, P. (2003).  
+- « Finding optimal bayesian networks.  », Chickering, D. and Meek, C. ( 2002).  
+- « Learning dynamic bayesian networks. », Ghahramani, Z. (1998).  
+- « Knowledge representation and inference in similarity networks and bayesian multinets. », 
+Geiger, D. and Heckerman, D. (1996).  
+- « Learning Bayesian networks: The combination of knowledg e and statistical data. », 
+Heckerman, D., Geiger, D., and Chickering, M. (1994).  
+ 
+ 
+ Webographie  
+ 
+- http://tisic.inrets.fr/Seminaires/seminaire2/doc/coursMangeas.pdf  
+- http://david.bellot.free.fr/These_David_Bellot.pdf  
+- http://perso -math.univ -mlv.fr/users/bouissou.marc/siteRB/Page 0.htm  
+- http://www.univ -angers.fr/docs/etudquassi/methodes_bayesiennes.pdf  
+- http://asi.insa -rouen.fr/enseignement/ siteUV/rna/  
+- http://www.cs.ubc.ca/%7Emurphyk/Bayes/bnintro.html  
+- http://www.lri.fr/%7Eantoine/Courses/IIE/WEB -ISX/Tr -SE-3-4.pdf  
+- http://maia.loria.fr/GTMS/Cr/cr5.html  
+ 
