@@ -1,7 +1,6 @@
 import os
 from PyPDF2 import PdfReader
 from sentence_transformers import SentenceTransformer
-<<<<<<< HEAD
 from pinecone import Pinecone, ServerlessSpec
 
 # Initialize Pinecone
@@ -23,18 +22,6 @@ if index_name not in pinecone_client.list_indexes().names():
         )
     )
 index = pinecone_client.Index(index_name)
-=======
-import pinecone
-
-# Initialize Pinecone (no environment parameter required for serverless)
-pinecone.init(api_key="pcsk_3iUfRX_F1cPojuDopWJBtTgPYqjG6Fv9EDJrQLTGtJiZxrmn2UNUetXJixRGgsQRXHrCi6")
-index_name = "pdf-document-vectors"
-
-# Create Pinecone index if it doesn't exist
-if index_name not in pinecone.list_indexes():
-    pinecone.create_index(index_name, dimension=384)  # Dimension depends on your embedding model
-index = pinecone.Index(index_name)
->>>>>>> 8b4d4f2587d7609f3ae2775861b92f154fa86964
 
 # Initialize SentenceTransformer for embedding
 model = SentenceTransformer('all-MiniLM-L6-v2')
@@ -75,7 +62,6 @@ def process_pdfs_and_store_in_pinecone():
                 if text:
                     index_text_in_pinecone(file_name, text)
 
-<<<<<<< HEAD
 def fetch_vector(file_name):
     try:
         result = index.fetch(ids=[file_name])
@@ -88,8 +74,3 @@ def fetch_vector(file_name):
 if __name__ == "__main__":
     #process_pdfs_and_store_in_pinecone()
     fetch_vector("RaN-M2-Bayesien-2022.pdf")
-=======
-# Run the pipeline
-if __name__ == "__main__":
-    process_pdfs_and_store_in_pinecone()
->>>>>>> 8b4d4f2587d7609f3ae2775861b92f154fa86964
