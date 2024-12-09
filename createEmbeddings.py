@@ -13,15 +13,17 @@ texts_dir = os.path.join(base_dir, "processed", "texts")  # Path to the texts fo
 
 # Create Pinecone index if it doesn't exist
 if index_name not in pc.list_indexes().names():
+    # Recreate the Pinecone index with a larger dimension
     pc.create_index(
         name=index_name,
-        dimension=384,  # Dimension based on `all-MiniLM-L6-v2`
+        dimension=384,
         metric="cosine",  # Similarity metric (cosine)
         spec=ServerlessSpec(
             cloud="aws",  # Cloud provider
             region="us-east-1"  # Region from the Pinecone UI
         )
     )
+
 
 # Connect to the Pinecone index
 index = pc.Index(index_name)
@@ -30,25 +32,31 @@ index = pc.Index(index_name)
 model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
 
 
-# Function to index text in Pinecone
-def index_text_in_pinecone(file_name, text):
-    # Create an ASCII-safe ID by removing non-ASCII characters
-    safe_file_name = re.sub(r'[^a-zA-Z0-9]', '_', file_name)  # Replace non-ASCII chars with underscores
-    # Try to fetch the record and check if it already exists
-    existing_record = index.fetch([safe_file_name])
-    if existing_record.ids:  # If record exists, skip indexing
-        print(f"Record for {safe_file_name} already exists. Skipping...")
-    else:
-        try:
-            # Generate embedding for the text
-            vector = model.encode(text).tolist()
+# Function to split text into smaller chunks
+def split_text(text, chunk_size=500):  # Chunk size in characters
+    # Split the text into chunks of the specified size
+    chunks = [text[i:i + chunk_size] for i in range(0, len(text), chunk_size)]
+    return chunks
 
-            # Upload to Pinecone with metadata
-            index.upsert(vectors=[{"id": safe_file_name, "values": vector, "metadata": {"file_name": file_name}}])
+# Process each chunk separately
+def index_text_in_pinecone(file_name, text):
+    # Split text into chunks if it's too large
+    text_chunks = split_text(text)
+
+    for i, chunk in enumerate(text_chunks):
+        # Create an ASCII-safe ID by including the chunk index to avoid duplicates
+        safe_file_name = re.sub(r'[^a-zA-Z0-9]', '_', f"{file_name}_{i}")
+        
+        try:
+            # Generate embedding for the chunk
+            vector = model.encode(chunk).tolist()
+
+            # Upload to Pinecone with metadata for the chunk
+            index.upsert(vectors=[{"id": safe_file_name, "values": vector, "metadata": {"file_name": file_name, "chunk_index": i, "text": chunk}}])
             print(f"Indexed: {safe_file_name}")
 
         except Exception as e:
-            print(f"Error indexing {file_name}: {e}")
+            print(f"Error indexing chunk {i} of {file_name}: {e}")
 
 
 # Process text files in the 'texts' directory
