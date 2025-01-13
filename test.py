@@ -47,7 +47,7 @@ def generate_answer(key_points, num_key_points=3):
 
         try:
             # Search for relevant chunks based on the prompt
-            results = index.query(namespace="",vector=query_vector,top_k=40,include_values=True,includeMetadata=True)
+            results = index.query(namespace="",vector=query_vector,top_k=400,include_values=True,includeMetadata=True)
             if not results or 'matches' not in results or len(results['matches']) == 0:
                 print(f"No results found for the prompt: {prompt}")
                 context = "No relevant text found."
@@ -58,6 +58,7 @@ def generate_answer(key_points, num_key_points=3):
             
             # Use Google Generative AI to generate the summary for the key point
             full_prompt = f"Answer to the following question'{prompt}':\n using these documents{context}"
+            #print(f"Full Prompt for '{prompt}': {full_prompt}")
             
             # Use the GenerativeModel instance to generate the content
             response = genai_model.generate_content(full_prompt)
