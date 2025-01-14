@@ -33,9 +33,42 @@ model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
 
 
 # Function to split text into smaller chunks
-def split_text(text, chunk_size=500):  # Chunk size in characters
-    # Split the text into chunks of the specified size
-    chunks = [text[i:i + chunk_size] for i in range(0, len(text), chunk_size)]
+def split_text(text, chunk_size=500):
+    """
+    Split the text into smaller chunks, ensuring chunks do not split sentences
+    or paragraphs unnecessarily. Adjusts boundaries to maintain context.
+
+    Parameters:
+    - text (str): The input text to split.
+    - chunk_size (int): Target chunk size in characters (default: 500).
+
+    Returns:
+    - List[str]: A list of text chunks.
+    """
+    # Use a regex to split the text into sentences while preserving boundaries
+    sentences = re.split(r'(?<=[.!?]) +', text)
+
+    chunks = []
+    current_chunk = []
+    current_length = 0
+
+    for sentence in sentences:
+        sentence_length = len(sentence)
+
+        # If adding the sentence exceeds the chunk size, save the current chunk
+        if current_length + sentence_length > chunk_size:
+            chunks.append(' '.join(current_chunk))
+            current_chunk = []
+            current_length = 0
+
+        # Add the sentence to the current chunk
+        current_chunk.append(sentence)
+        current_length += sentence_length
+
+    # Add the last chunk if there's any remaining text
+    if current_chunk:
+        chunks.append(' '.join(current_chunk))
+
     return chunks
 
 # Process each chunk separately
